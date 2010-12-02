@@ -1,0 +1,136 @@
+id: MyTheme
+key: MyTheme
+name: My Killer Theme
+version: 1.0
+author_name: Your Name
+author_link: http://example.com/
+plugin_link: https://example.com/mytheme
+description: This is a skeloton theme for Movable Type and Melody. Be sure to change all these settings.
+
+static_version: 1
+blog_preferences:
+    my_config:
+        label: "MyTheme Site Config"
+        description: "Preferred settings for MyTheme."
+        order: 100
+        preferences: default_prefs.yaml
+default_templates:
+  base_path: templates/global/
+  global:module:
+  global:email:
+  global:system:
+template_sets:
+    my_theme:
+        base_path: 'templates'
+        label: 'MyTheme'
+        documentation: docs.html
+        preview: 'preview.jpg'
+        thumbnail: 'thumbnail.jpg'
+        blog_preferences: my_config
+        content:
+            categories:
+                category_1:
+                    label: 'Category 1'
+            folders:
+                images:
+                    label: 'Images'
+                pdf:
+                    label: 'PDF'
+            pages:
+                uploads:
+                    label: 'Page title goes here'
+                    body: 'Body text goes here.'
+        fields:
+          mytheme_page_file:
+            label: File
+            type: asset.file
+            obj_type: page
+            tag: MyThemePageFile
+        templates:
+          index:
+          individual:
+          page:
+          entry:
+          archive:
+          module:
+          widget:
+          widgetset:
+          system:
+        options:
+            fieldsets:
+                fs_group1:
+                    label: 'Group 1'
+                    hint: 'Hint goes here.'
+                    order: 1
+                fs_group2:
+                    label: 'Group 2'
+                    hint: 'Hint goes here.'
+                    order: 2
+                fs_group3:
+                    label: 'Group 3'
+                    hint: 'Hint goes here.'
+                    order: 3
+                fs_group4:
+                    label: 'Group 4'
+                    hint: 'Hint goes here.'
+                    order: 4
+                fs_group5:
+                    label: 'Group 5'
+                    hint: 'Hint goes here.'
+                    order: 5
+                fs_group6:
+                    label: 'Group 6'
+                    hint: 'Hint goes here.'
+                    order: 6
+            mytheme_text:
+                type: text
+                label: "Single-line Text"
+                hint: ""
+                tag: 'MyThemeText'
+                order: 1
+                fieldset: general
+            mytheme_select:
+                type: select
+                label: "Drop Dpwn"
+                values: Yes,No
+                hint: ""
+                tag: 'MyThemeSelect'
+                order: 2
+                fieldset: general
+            mytheme_file_blog:
+                type: file
+                destination: images/%{10}e
+                label: "Local File"
+                hint: ""
+                tag: 'MyThemeLocalFile'
+                scope: blog
+                order: 4
+                fieldset: general
+            mytheme_file:
+                type: file
+                destination: images/%{10}e
+                label: "System File"
+                hint: ""
+                tag: 'MyThemeFile'
+                order: 4
+                fieldset: general
+            mytheme_ifcheck:
+                type: checkbox
+                label: "If Checkbox?"
+                hint: ""
+                tag: 'IfMyThemeCheck?'
+                default: 0
+                order: 1
+                fieldset: gallery
+            mytheme_textarea:
+                type: textarea
+                label: "Textarea"
+                hint: ""
+                tag: 'MyThemeTextarea'
+                order: 1
+                fieldset: info                
+skip_static:
+    - index.html
+    - readme.txt
+    - .psd
+    - .zip

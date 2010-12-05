@@ -1,0 +1,12 @@
+<__trans_section component="community">
+<div id="header-menu">
+    <ul>
+<mt:IfBlog>
+        <li><a href="<$mt:Link template="main_index"$>"><__trans phrase="Home"></a></li>
+        <li><a href="<$mt:Link template="archive_index"$>"><__trans phrase="Archives"></a></li>
+<mt:Else>
+        <li><a href="<$mt:Var name="blog_url"$>"><__trans phrase="Home"></a></li>
+</mt:IfBlog>
+    </ul>
+</div>
+</__trans_section>

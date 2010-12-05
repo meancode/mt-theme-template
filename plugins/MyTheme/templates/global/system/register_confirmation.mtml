@@ -1,0 +1,23 @@
+<__trans_section component="community">
+<$mt:Var name="body_class" value="mt-profile-register"$>
+<mt:If name="resend">
+    <mt:SetVarBlock name="page_title"><__trans phrase="Authentication Email Sent"></mt:SetVarBlock>
+<mt:Else>
+    <mt:SetVarBlock name="page_title"><__trans phrase="Profile Created"></mt:SetVarBlock>
+</mt:If>
+<mt:SetVarBlock name="title"><mt:If name="blog_id"><$mt:BlogName encode_html="1"$>: </mt:If><$mt:Var name="page_title"$></mt:SetVarBlock>
+
+<$mt:Include module="<__trans phrase="Simple Header">"$>
+
+<h1 id="page-title" class="asset-name"><$mt:Var name="page_title"$></h1>
+
+<p><__trans phrase="To complete the registration process you must first confirm your account. An email has been sent to [_1]." params="<$mt:Var name="email" escape="html"$>"></p>
+
+<p><__trans phrase="To confirm and activate your account please check your inbox and click on the link found in the email we just sent you."></p>
+
+<mt:if name="return_to">
+<p><__trans phrase="<a href="[_1]">Return to the original page.</a>" params="<$mt:Var name="return_to"$>"></p>
+</mt:if>
+
+<$mt:Include module="<__trans phrase="Simple Footer">"$>
+</__trans_section>

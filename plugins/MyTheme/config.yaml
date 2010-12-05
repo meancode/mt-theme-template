@@ -1,6 +1,6 @@
 id: MyTheme
 key: MyTheme
-name: My Killer Theme
+name: My Theme
 version: 1.0
 author_name: Your Name
 author_link: http://example.com/
@@ -19,6 +19,36 @@ default_templates:
   global:module:
   global:email:
   global:system:
+    login_form:
+      filename: system/login_form.mtml
+      label: 'Login Form'
+    new_password:
+      filename: system/new_password.mtml
+      label: 'New Password Form'
+    new_password_reset_form:
+      filename: system/new_password_reset_form.mtml
+      label: 'New Password Reset Form'
+    password_reset_form:
+      filename: system/password_reset_form.mtml
+      label: 'Password Reset Form'
+    profile_edit_form:
+      filename: system/profile_edit_form.mtml
+      label: 'Profile Edit Form'
+    profile_error:
+      filename: system/profile_error.mtml
+      label: 'Profile Error'
+    profile_feed:
+      filename: system/profile_feed.mtml
+      label: 'Profile Feed'
+    profile_view:
+      filename: system/profile_view.mtml
+      label: 'Profile View'
+    register_confirmation:
+      filename: system/register_confirmation.mtml
+      label: 'Registration Confirmation'
+    register_form:
+      filename: system/register_form.mtml
+      label: 'Registration Form'
 template_sets:
     my_theme:
         base_path: 'templates'

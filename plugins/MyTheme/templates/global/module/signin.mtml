@@ -1,0 +1,64 @@
+<__trans_section component="community">
+<div class="widget-sign-in widget">
+    <h3 class="widget-header"><__trans phrase="Sign In"></h3>
+    <div id="signin-widget-content" class="widget-content"></div>
+</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+function mtUpdateSignInWidget(u) {
+    var separator = '&nbsp;&nbsp;|&nbsp;&nbsp;';
+    var el = document.getElementById('signin-widget-content');
+    var content = '';
+    if (!el) return;
+    if (u) {
+        if (u && u.is_authenticated) {
+            user = u;
+            mtSaveUser();
+        } else {
+            // user really isn't logged in; so let's do this!
+            return mtSignIn();
+        }
+    } else {
+        u = mtGetUser();
+    }
+    if (u && u.name) {
+        var url;
+        if (u.is_authenticated) {
+            if (u.is_author) {
+                url = '<$mt:CGIPath$><$mt:CommunityScript$>?__mode=view&blog_id=<$mt:BlogID$>';
+                url += '&static=' + encodeURIComponent( location.href );
+            } else {
+                url = u.url;
+            }
+        } else if (u.url) {
+            url = u.url;
+        } else {
+            url = null;
+        }
+        if (url)
+            content += '<__trans phrase="You are signed in as <a href="[_1]">[_2]</a>" params="' + url + '%%' + u.name + '">';
+        else
+            content += '<__trans phrase="You are signed in as [_1]" params="' + u.name + '">';
+        if (u.is_author)
+            content += separator + '<a href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=edit&blog_id=<$mt:BlogID$>&return_to=' + encodeURIComponent(document.URL) + '"><__trans phrase="Edit profile"></a>';
+        <mt:Unless name="hide_signout_link">
+        content += separator + '<a href="javascript:void(0)" onclick="return mtSignOutOnClick()"><__trans phrase="Sign out" escape="js"></a>';
+        </mt:Unless>
+    } else if (u && u.is_banned) {
+        content = '<__trans phrase="You do not have permission to sign in to this blog." escape="js">';
+    } else {
+        content = '<a href="javascript:void(0)" onclick="return mtSignInOnClick(\'signin-widget-content\')"><__trans phrase="Sign In" escape="js"></a>';
+        <mt:IfExternalUserManagement>
+        <mt:Else>
+        <mt:IfCommenterRegistrationAllowed>
+        content += separator + '<__trans phrase="Not a member? <a href="[_1]">Register</a>" params="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=register&blog_id=<$mt:BlogID$>&return_to=' + encodeURIComponent(document.URL) + '">';
+        </mt:IfCommenterRegistrationAllowed>
+        </mt:IfExternalUserManagement>
+    }
+    el.innerHTML = content;
+}
+mtAttachEvent('usersignin', mtUpdateSignInWidget);
+mtUpdateSignInWidget();
+/* ]]> */
+</script>
+</__trans_section>

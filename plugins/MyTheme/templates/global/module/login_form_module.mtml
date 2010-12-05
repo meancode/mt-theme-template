@@ -1,0 +1,52 @@
+<__trans_section component="community">
+<div class="widget-login widget">
+    <div id="login-widget-content" class="widget-content">
+    <script type="text/javascript">
+    <!--
+    function sidebar_loggedin_process(loggedin, eid) {
+        if (!loggedin)
+            loggedin = commenter_name ? true : false;
+        conditional_block(loggedin, eid);
+        if (!loggedin) return;
+        var greet = document.getElementById('profile-widget-content');
+        if (!greet) return;
+        var result = [];
+        if (user) {
+            // MT Native User
+            result.push('<__trans phrase="Logged in as <a href="[_1]">[_2]</a>" params="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=view&amp;id=' + user_id + '%%' + user + '">');
+            result.push('<a href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=edit&amp;return_to=' + encodeURIComponent(document.URL) + '"><__trans phrase="Edit Profile"></a>');
+            result.push('<a href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=logout&amp;return_to=' + encodeURIComponent(document.URL) + '"><__trans phrase="Logout"></a>');
+        }
+        else if (commenter_name) {
+            // Authenticated Commenter
+            result.push('<__trans phrase="Hello [_1]" params="' + commenter_name + '">');
+            result.push('<a href="<$mt:CGIPath$><$mt:CommunityScript$>?handle_sign_in&amp;logout=1&amp;static=' + encodeURIComponent(document.URL) + '"><__trans phrase="Logout"></a>');
+        }
+        greet.innerHTML = result.join('<br />');
+    }
+    function setReturn(form) {
+        form['return_to'].value = document.URL;
+        return true;
+    }
+    //-->
+    </script>
+    <mt:IfLoggedIn element_id="sidebar_loggedin" script="sidebar_loggedin_process">
+        <span id="sidebar_loggedin_greeting"></span>
+    <mt:Else>
+        <form method="POST" action="<$mt:CGIPath$><$mt:CommunityScript$>" onsubmit="return setReturn(this);">
+            <input type="hidden" name="__mode" value="do_login" />
+            <input type="hidden" name="blog_id" value="<$mt:BlogID$>" />
+            <input type="hidden" name="return_to" value="<$mt:BlogID$>" />
+            <mt:SetVarBlock name="field-content"><input id="username" class="ti" name="username" onfocus="loginFocus('username')" onblur="loginBlur('username')" /></mt:SetVarBlock>
+            <$mt:Include module="<__trans phrase="Form Field">" id="psername" class="" label="Username"$>
+            <mt:SetVarBlock name="field-content"><input id="password" class="pw" type="password" name="password" onfocus="loginFocus('password')" onblur="loginBlur('password')" /></mt:SetVarBlock>
+            <$mt:Include module="<__trans phrase="Form Field">" id="password" class="" label="Password"$>
+            <input type="submit" class="sb" value="Login" />
+        </form>
+        <a href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=login&amp;blog_id=<$mt:BlogID$>&amp;return_url=<$mt:BlogURL$>"><__trans phrase="Sign in"></a><br/>
+        <a href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=recover&amp;blog_id=<$mt:BlogID$>&amp;return_url=<$mt:BlogURL$>"><__trans phrase="Forgot Password"></a><br/>
+        <a href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=register&amp;blog_id=<$mt:BlogID$>&amp;return_url=<$mt:BlogURL$>"><__trans phrase="Sign up"></a>
+    </mt:IfLoggedIn>
+    </div>
+</div>
+</__trans_section>

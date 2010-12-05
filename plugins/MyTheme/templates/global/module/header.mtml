@@ -1,0 +1,86 @@
+<mt:SetVarBlock name="html_head" prepend="1">
+<__trans_section component="community">
+    <mt:IfBlog>
+        <mt:Ignore>
+    <!-- Community Solution Blog variables -->
+    <!-- The below variables are used when there a blog is in context.  -->
+        </mt:Ignore>
+        <mt:SetVarBlock name="blog_id"><$mt:BlogID$></mt:SetVarBlock>
+        <mt:SetVarBlock name="blog_name"><$mt:BlogName encode_html="1"$></mt:SetVarBlock>
+        <mt:SetVarBlock name="blog_description"><$mt:BlogDescription$></mt:SetVarBlock>
+        <mt:SetVarBlock name="blog_url"><$mt:BlogURL$></mt:SetVarBlock>
+        <mt:SetVarBlock name="profile_view_url"><$mt:CGIPath$><$mt:CommunityScript$>?__mode=view&amp;blog_id=<$mt:BlogID encode_html="1"$>&amp;id=</mt:SetVarBlock>
+        <link rel="stylesheet" href="<$mt:Link template="styles"$>" type="text/css" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="<$mt:Link template="feed_recent"$>" />
+        <link rel="start" href="<$mt:BlogURL$>" title="Home" />
+        <script type="text/javascript" src="<$mt:Link template="javascript"$>"></script>
+        <$mt:CCLicenseRDF$>
+    <mt:Else>
+        <mt:Ignore>
+    <!-- Community Solution Static variables -->
+    <!-- The below variables are used when there is no blog in context. Set them to defaults in the case that they are used w/o a blog context -->
+        </mt:Ignore>
+        <mt:SetVarBlock name="blog_name"><__trans phrase="Blog Name"></mt:SetVarBlock>
+        <mt:SetVarBlock name="blog_description"><__trans phrase="Blog Description"></mt:SetVarBlock>
+        <mt:SetVarBlock name="blog_url">#</mt:SetVarBlock>
+        <mt:SetVarBlock name="profile_view_url"><$mt:CGIPath$><$mt:CommunityScript$>?__mode=view&amp;blog_id=<$mt:BlogID encode_html="1"$>&amp;id=</mt:SetVarBlock>
+        <link rel="stylesheet" href="<$mt:StaticWebPath$>themes-base/blog.css" type="text/css" />
+        <link rel="stylesheet" href="<$mt:StaticWebPath$>themes-base/forum.css" type="text/css" />
+        <link rel="stylesheet" href="<$mt:StaticWebPath$>themes/tristan-blue-4.2/screen.css" type="text/css" />
+        <script type="text/javascript" charset="utf-8"><$mt:Include module="<__trans phrase="GlobalJavaScript">"$></script>
+        <!-- END Community Solution Styles -->
+    </mt:IfBlog>
+</__trans_section>
+</mt:SetVarBlock>
+<__trans_section component="community">
+<mt:If tag="BlogTemplateSetID" eq="mt-community-forum"><$mt:Var name="page_layout" value="layout-wm"$></mt:If>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<$mt:BlogLanguage$>" lang="<$mt:BlogLanguage$>" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<$mt:PublishCharset$>" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="imagetoolbar" content="no" />    
+    <title><$mt:Var name="title"$></title>
+    <meta name="generator" content="<$mt:ProductName version="1"$>" />
+    <$mt:Var name="html_head"$>
+    <mt:Ignore>
+    <!-- Community Solution Scoring -->
+    <!-- This updates any scoring controls on the page for the user who is signed-in. -->
+    </mt:Ignore>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    mtAttachEvent('load', mtUpdateScores);
+    mtAttachEvent('usersignin', mtUpdateScores);
+    /* ]]> */
+    </script>
+</head>
+<body id="<$mt:BlogTemplateSetID$>" class="<$mt:Var name="body_class"$> <$mt:Var name="page_layout"$>">
+    <div id="container">
+        <div id="container-inner">
+            <div id="header">
+                <div id="header-inner">
+                    <div id="header-content">
+<mt:If name="main_index">
+                        <h1 id="header-name"><a href="<$mt:Var name="blog_url"$>" accesskey="1"><$mt:Var name="blog_name"$></a></h1>
+    <mt:If name="blog_description">
+                        <h2 id="header-description"><$mt:Var name="blog_description"$></h2>
+    </mt:If>
+<mt:Else>
+                        <div id="header-name"><a href="<$mt:Var name="blog_url"$>" accesskey="1"><$mt:Var name="blog_name"$></a></div>
+    <mt:If name="blog_description">
+                        <div id="header-description"><$mt:Var name="blog_description"$></div>
+    </mt:If>
+</mt:If>
+                        <$mt:Include module="<__trans phrase="Navigation">"$>
+                        <$mt:Include module="<__trans phrase="Sign In">"$>
+                        <$mt:Include module="<__trans phrase="Search">"$>
+                   </div>
+                </div>
+            </div>
+            <div id="content">
+                <div id="content-inner">
+                    <div id="alpha">
+                        <div id="alpha-inner">
+</__trans_section>

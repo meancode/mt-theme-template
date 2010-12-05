@@ -1,0 +1,16 @@
+<__trans_section component="community">
+<$mt:Var name="body_class" value="mt-profile-error"$>
+<mt:SetVarBlock name="page_title"><__trans phrase="Profile Error"></mt:SetVarBlock>
+<mt:SetVarBlock name="title"><mt:If name="blog_id"><$mt:BlogName encode_html="1"$>: </mt:If><$mt:Var name="page_title"$></mt:SetVarBlock>
+
+<$mt:Include module="<__trans phrase="Header">"$>
+
+<h1 id="page-title" class="asset-name"><$mt:Var name="page_title"$></h1>
+
+<mt:SetVarBlock name="status-msg"><__trans phrase="ERROR MSG HERE"></mt:SetVarBlock>
+<$mt:Include module="<__trans phrase="Status Message">" id="generic-error" class="error"$>
+
+<p><a href="javascript:void(0)" onclick="history.back()"><__trans phrase="Go Back"></a></p>
+
+<$mt:Include module="<__trans phrase="Footer">"$>
+</__trans_section>

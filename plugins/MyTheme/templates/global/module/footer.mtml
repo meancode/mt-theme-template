@@ -1,0 +1,30 @@
+                        </div>
+                    </div>
+<mt:Unless name="hide_sidebar">
+                    <$mt:Include module="<__trans phrase="Sidebar">"$>
+</mt:Unless>
+                </div>
+            </div>
+            <div id="footer">
+                <div id="footer-inner">
+                    <div id="footer-content">
+                        <div class="widget-powered widget">
+                            <div class="widget-content">
+                                <span><__trans phrase="_POWERED_BY"></span>
+                            </div>
+                        </div>
+<mt:BlogIfCCLicense>
+                        <div class="widget-creative-commons widget">
+                            <div class="widget-content">
+                                <__trans phrase="This blog is licensed under a <a href="[_1]">Creative Commons License</a>." params="<$mt:BlogCCLicenseURL$>">
+                            </div>
+                        </div>
+</mt:BlogIfCCLicense>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <$mt:Var name="html_body_footer"$>
+</body>
+</html>

@@ -1,4 +1,4 @@
-<__trans_section component="community"><?xml version="1.0" encoding="<$mt:PublishCharset$>"?>
+<?xml version="1.0" encoding="<$mt:PublishCharset$>"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title><$mt:Var name="feed_title"$></title>
     <generator uri="http://www.sixapart.com/movabletype/"><$mt:ProductName version="1"$></generator>
@@ -51,7 +51,7 @@
     <mt:Actions>
     <entry>
         <mt:ActionsEntry>
-        <title><__trans phrase="Posted [_1] to [_2]" params="<$mt:EntryTitle remove_html="1" encode_xml="1"$>%%<$mt:EntryBlogName remove_html="1" encode_xml="1"$>"></title>
+        <title>Posted <$mt:EntryTitle remove_html="1" encode_xml="1"$> to <$mt:EntryBlogName remove_html="1" encode_xml="1"$></title>
         <link rel="alternate" type="text/html" href="<$mt:EntryPermalink encode_xml="1"$>" />
         <id><$mt:EntryAtomID$></id>
         <published><$mt:EntryDate utc="1" format="%Y-%m-%dT%H:%M:%SZ"$></published>
@@ -69,7 +69,7 @@
         </content>
         </mt:ActionsEntry>
         <mt:ActionsComment>
-        <title><__trans phrase="Commented on [_1] in [_2]" params="<mt:CommentEntry><$mt:EntryTitle remove_html="1" encode_xml="1"$>%%<$mt:EntryBlogName remove_html="1" encode_xml="1"$></mt:CommentEntry>"></title>
+        <title>Commented on <mt:CommentEntry><$mt:EntryTitle remove_html="1" encode_xml="1"$> in <$mt:EntryBlogName remove_html="1" encode_xml="1"$></mt:CommentEntry></title>
         <link rel="alternate" type="text/html" href="<$mt:CommentLink encode_xml="1"$>" />
         <id><mt:CommentEntry><$mt:EntryAtomID$></mt:CommentEntry>#<$mt:CommentID$></id>
         <updated><$mt:CommentDate utc="1" format="%Y-%m-%dT%H:%M:%SZ"$></updated>
@@ -82,7 +82,7 @@
         </content>
         </mt:ActionsComment>
         <mt:ActionsFavorite>
-        <title><__trans phrase="Voted on [_1] in [_2]" params="<$mt:EntryTitle remove_html="1" encode_xml="1"$>%%<$mt:EntryBlogName remove_html="1" encode_xml="1"$>"></title>
+        <title>Voted on <$mt:EntryTitle remove_html="1" encode_xml="1"$> in <$mt:EntryBlogName remove_html="1" encode_xml="1"$></title>
         <link rel="alternate" type="text/html" href="<$mt:EntryPermalink encode_xml="1"$>" />
         <id><$mt:EntryAtomID$></id>
         <published><$mt:EntryDate utc="1" format="%Y-%m-%dT%H:%M:%SZ"$></published>
@@ -92,10 +92,10 @@
             <uri><$mt:CGIPath encode_xml="1"$><$mt:CommunityScript encode_xml="1"$>?__mode=view&amp;blog_id=<$mt:BlogID$>&amp;id=<$mt:EntryAuthorID$></uri>
         </author>
         <content type="html" xml:lang="<$mt:BlogLanguage ietf="1"$>" xml:base="<$mt:BlogURL encode_xml="1"$>">
-            <![CDATA[<p><__trans phrase="[_1] voted on <a href="[_2]">[_3]</a> in [_4]" params="<$mt:EntryAuthorDisplayName remove_html="1" encode_xml="1"$>%%<$mt:EntryPermalink encode_xml="1"$>%%<$mt:EntryTitle remove_html="1" encode_xml="1"$>%%<$mt:EntryBlogName remove_html="1" encode_xml="1"$>"></p>]]>
+            <![CDATA[<p><$mt:EntryAuthorDisplayName remove_html="1" encode_xml="1"$> voted on <a href="<$mt:EntryPermalink encode_xml="1"$>"><$mt:EntryTitle remove_html="1" encode_xml="1"$></a> in <$mt:EntryBlogName remove_html="1" encode_xml="1"$></p>]]>
         </content>
         </mt:ActionsFavorite>
     </entry>
     </mt:Actions>
 </mt:If>
-</feed></__trans_section>
+</feed>

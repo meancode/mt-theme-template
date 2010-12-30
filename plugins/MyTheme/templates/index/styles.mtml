@@ -43,7 +43,7 @@ a:hover, a:active { outline: none; }
 a, a:active, a:visited { color: #607890; }
 a:hover { color: #036; }
 
-ul, ol { margin-left: 1.8em; }
+ul, ol { margin-left: 2.0em; }
 ol { list-style-type: decimal; }
 
 nav ul, nav li { margin: 0; } 
@@ -83,8 +83,116 @@ button {  width: auto; overflow: visible; }
 
 
  /* Primary Styles
-    Author: Your Name
+    Author: Ken Edwards
  */
+
+button:focus { outline-width:1px; outline-style:dotted; } 
+button::-moz-focus-inner { padding:0; border:0; }
+
+
+ /* Styles based on headcss by tipiirai
+    https://github.com/tipiirai/headcss
+ */
+
+input, select, textarea {
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px;
+}
+
+button {
+padding:.1em .5em;
+border:1px solid #999;
+border-color:#ddd #bbb #999;
+cursor:pointer;
+color:#333;
+background-image: -moz-linear-gradient(#f9f9f9, #ddd);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f9f9f9), to(#ddd));
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+
+button:active {
+border:1px inset #ccc;
+-moz-box-shadow:0 0 3px #0066FF;
+}
+
+hr {
+border:1px solid #ddd;
+border-width:1px 0 0;
+margin:1em 0;
+}
+
+strong, b, th, dt { font-weight: bold; }
+
+em, i, caption {
+font-style:italic;
+}
+
+pre, code {
+font-family:"courier new",monospace;
+}
+
+p, table, ul, ol {
+margin:0.8em 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+margin:2% 0 -1% 0;
+}
+
+h1 {
+font-size: 2.2em;
+line-height: 1.1;
+}
+
+h2 {
+font-size: 1.8em;
+line-height: 1.15;
+}
+
+h3 {
+font-size: 1.5em;
+line-height: 1.2;
+}
+
+h4, h5, h6 {
+font-size: 1em;
+font-weight:bold;
+}
+
+.large { font-size: 130%; }
+.small,small { font-size: 80%; }
+.hide { display: none; }
+
+.quiet { color: #777; }
+.loud { color: #000; }
+.highlighted { background:#ff0; }
+
+.dark { background-color:#222; color:#fff; }
+.light { background-color:#f9f9f9; }
+.dark a { color:#ceff00; }
+            
+.first { margin-left:0; padding-left:0; }
+.last { margin-right:0; padding-right:0; }
+.top { margin-top:0; padding-top:0; }
+.bottom { margin-bottom:0; padding-bottom:0; } 
+
+.shadow {
+-moz-box-shadow: 0 0 5px rgba(0,0,0,.2);
+-webkit-box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+
+.rounded {
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+
+.gradient {
+
+}
 
 /*
  * Media queries for responsive design

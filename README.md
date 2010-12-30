@@ -1,4 +1,4 @@
-# MT-Theme-Template 0.2
+# MT Theme Template 0.3
 
 **NOT READY FOR PRIME TIME YET**
 
@@ -22,16 +22,25 @@ The purpose here is twofold:
 
 ## Theme Foundation
 
-This theme is based on two solid frameworks, [HTML 5 Boilerplate](https://github.com/paulirish/html5-boilerplate) and [960 Grid System](https://github.com/nathansmith/960-Grid-System). These have been enhanced using Theme Options in Movable Type/Melody. This theme is based on:
+This theme is based on two solid frameworks, [HTML 5 Boilerplate](https://github.com/paulirish/html5-boilerplate) and [960 Grid System](https://github.com/nathansmith/960-Grid-System). These have been enhanced using Theme Options in Movable Type/Melody. This theme uses the following frameworks and libraries:
 
 * HTML 5 Boilerplate _0.9.5_
 * Modernizr _1.6_
 * jQuery _1.4.2_
 * 960 Grid System _last updated 11-18-2010_
+* [AnythingSlider for Movable Type](https://github.com/meancode/mt-plugin-anythingslider)
+* [Colorbox](https://github.com/jackmoore/colorbox)
+* [Twitter @Anywhere](http://dev.twitter.com/anywhere)
 
 ## HTML 5 Boilerplate
 
 If you are not familiar with working with HTML 5 Boilerplate, you should watch the [introductory video](http://html5boilerplate.com/) for a better understanding. It is outside the scope of this Theme to explain all of the options. It is advised to make changes to the .mtml templates to suit your needs before deploying this theme.
+
+Notes:
+
+* I am assuming that you will be using Apache, I have made changes to the `.htaccess` and have set Movable Type to write this file to the server. If you are using IIS or nginx, I have not provided similar modifications. This may be in a future release of this theme.
+* Because I am assuming an Apache server, I have taken out the `X-UA-Compatible` META tag, since the `.htaccess` file does this for me. Besides this being redundant code in an Apache environment, it is [invalid HTML5](https://github.com/paulirish/html5-boilerplate/issues/closed#issue/257) as well.
+* **Apple Touch Icon** - You may wish to use the `precomposed` to be compatible with Android devices. This takes a little extra effort on your part to create the gloss effect (if desired). [Download a template with gloss](http://blog.cocoia.com/2010/iphone-4-icon-psd-file/).
 
 ## 960 Grid System
 

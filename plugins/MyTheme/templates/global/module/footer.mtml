@@ -1,7 +1,7 @@
                         </div>
                     </div>
 <mt:Unless name="hide_sidebar">
-                    <$mt:Include module="<__trans phrase="Sidebar">"$>
+                    <$mt:Include module="Sidebar"$>
 </mt:Unless>
                 </div>
             </div>
@@ -10,13 +10,13 @@
                     <div id="footer-content">
                         <div class="widget-powered widget">
                             <div class="widget-content">
-                                <span><__trans phrase="_POWERED_BY"></span>
+                                <span>Powered by <a href="http://www.movabletype.com/" rel="generator"><$MTProductName$></a></span>
                             </div>
                         </div>
 <mt:BlogIfCCLicense>
                         <div class="widget-creative-commons widget">
                             <div class="widget-content">
-                                <__trans phrase="This blog is licensed under a <a href="[_1]">Creative Commons License</a>." params="<$mt:BlogCCLicenseURL$>">
+                                This blog is licensed under a <a href="<$mt:BlogCCLicenseURL$>">Creative Commons License</a>.
                             </div>
                         </div>
 </mt:BlogIfCCLicense>
@@ -26,5 +26,6 @@
         </div>
     </div>
     <$mt:Var name="html_body_footer"$>
+<$mt:Include module="SignInOnClick"$>
 </body>
 </html>

@@ -1,9 +1,8 @@
-<__trans_section component="community">
 <$mt:Var name="body_class" value="mt-profile-register"$>
-<mt:SetVarBlock name="page_title"><__trans phrase="Sign up"></mt:SetVarBlock>
+<mt:SetVarBlock name="page_title">Sign up</mt:SetVarBlock>
 <mt:SetVarBlock name="title"><mt:If name="blog_id"><$mt:BlogName encode_html="1"$>: </mt:If><$mt:Var name="page_title"$></mt:SetVarBlock>
 
-<$mt:Include module="<__trans phrase="Simple Header">"$>
+<$mt:Include module="Simple Header"$>
 
 <h1 id="page-title" class="asset-name"><$mt:Var name="page_title"$></h1>
 
@@ -25,19 +24,19 @@
 <mt:SetVarBlock name="common_fields" id="common_fields">
     <mtapp:setting
         id="nickname"
-        label="<__trans phrase="Display Name">"
+        label="Display Name"
         label_class="top-label"
         required="1"
-        hint="<__trans phrase="The name appears on your comment.">">
+        hint="The name appears on your comment.">
         <input name="nickname" id="nickname" class="ti" value="<$mt:Var name="nickname" escape="html"$>" />
     </mt:App:Setting>
 
     <mtapp:setting
         id="email"
-        label="<__trans phrase="Email Address">"
+        label="Email Address"
         label_class="top-label"
         required="1"
-        hint="<__trans phrase="Your email address.">">
+        hint="Your email address.">
         <input name="email" id="email" class="ti" value="<$mt:Var name="email" escape="html"$>" />
     </mt:App:Setting>
 </mt:SetVarBlock>
@@ -50,10 +49,10 @@
 
     <mtapp:setting
         id="username"
-        label="<__trans phrase="Username">"
+        label="Username"
         label_class="top-label"
         required="1"
-        hint="<__trans phrase="Your login name.">">
+        hint="Your login name.">
         <input name="username" id="username" class="ti" value="<$mt:Var name="username" escape="html"$>" />
     </mt:App:Setting>
 
@@ -61,27 +60,27 @@
 
     <mtapp:setting
         id="password"
-        label="<__trans phrase="Initial Password">"
+        label="Initial Password"
         label_class="top-label"
         required="1"
-        hint="<__trans phrase="Select a password for yourself.">">
+        hint="Select a password for yourself.">
         <input type="password" name="password" id="password" class="pw" value="" />
     </mt:App:Setting>
 
     <mtapp:setting
         id="pass_verify"
-        label="<__trans phrase="Password Confirm">"
+        label="Password Confirm"
         label_class="top-label"
         required="1"
-        hint="<__trans phrase="Repeat the password for confirmation.">">
+        hint="Repeat the password for confirmation.">
         <input type="password" name="pass_verify" id="pass_verify" class="pw" value="" />
     </mt:App:Setting>
 
     <mtapp:setting
         id="url"
-        label="<__trans phrase="Website URL">"
+        label="Website URL"
         label_class="top-label"
-        hint="<__trans phrase="The URL of your website. (Optional)">">
+        hint="The URL of your website. (Optional)">
         <input name="url" id="url" class="ti" value="<$mt:Var name="url" escape="html"$>" />
     </mt:App:Setting>
 
@@ -94,9 +93,9 @@
 <input type="hidden" name="external_auth" value="1" />
     <mtapp:setting
         id="external_username"
-        label="<__trans phrase="Username">"
+        label="Username"
         required="1"
-        hint="<__trans phrase="Your login name.">">
+        hint="Your login name.">
         <input name="username" id="username" class="ti" value="<$mt:Var name="username" escape="html"$>" />
     </mt:App:Setting>
 </mt:If>
@@ -127,11 +126,10 @@
                 type="submit"
                 class="primary-button"
                 accesskey="s"
-                ><__trans phrase="Sign up"></button>
+                >Sign up</button>
         </div>
     </div>
 
 </form>
 
-<$mt:Include module="<__trans phrase="Simple Footer">"$><__trans_section component="community">
-
+<$mt:Include module="Simple Footer"$>

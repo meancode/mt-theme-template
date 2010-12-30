@@ -1,20 +1,19 @@
-<__trans_section component="community">
 <$mt:Var name="page_layout" value="layout-wt"$>
 <mt:IfBlog>
     <mt:SetVarBlock name="blog_name"><$mt:BlogName encode_html="1"$></mt:SetVarBlock>
-    <mt:SetVarBlock name="page_title"><__trans phrase="User Profile"></mt:SetVarBlock>
+    <mt:SetVarBlock name="page_title">User Profile</mt:SetVarBlock>
     <mt:SetVarBlock name="title"><mt:If name="blog_id"><$mt:Var name="blog_name"$>: </mt:If><$mt:Var name="page_title"$>: <$mt:AuthorDisplayName encode_html="1"$></mt:SetVarBlock>
 <mt:Else>
-    <mt:SetVarBlock name="blog_name"><__trans phrase="Blog Name"></mt:SetVarBlock>
-    <mt:SetVarBlock name="page_title"><__trans phrase="User Profile"></mt:SetVarBlock>
+    <mt:SetVarBlock name="blog_name">Blog Name</mt:SetVarBlock>
+    <mt:SetVarBlock name="page_title">User Profile</mt:SetVarBlock>
     <mt:SetVarBlock name="title"><mt:If name="blog_id"><$mt:Var name="blog_name"$>: </mt:If><$mt:Var name="page_title"$>: <$mt:AuthorDisplayName encode_html="1"$></mt:SetVarBlock>
 </mt:IfBlog>
 <$mt:Var name="hide_signout_link" value="1"$>
 <mt:SetVarBlock name="html_head">
-<link type="application/atom+xml" rel="alternate" title="<__trans phrase="Recent Actions from [_1]" params="<$mt:AuthorDisplayName encode_html="1"$>">" href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=feed&amp;_type=actions&amp;blog_id=<$mt:BlogID$>&amp;id=<$mt:AuthorID$>" />
-<link type="application/atom+xml" rel="alternate" title="<__trans phrase="Recent Entries from [_1]" params="<$mt:AuthorDisplayName encode_html="1"$>">" href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=feed&amp;_type=posts&amp;blog_id=<$mt:BlogID$>&amp;id=<$mt:AuthorID$>" />
-<link type="application/atom+xml" rel="alternate" title="<__trans phrase="Comments from [_1]" params="<$mt:AuthorDisplayName encode_html="1"$>">" href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=feed&amp;_type=comments&amp;blog_id=<$mt:BlogID$>&amp;id=<$mt:AuthorID$>" />
-<link type="application/atom+xml" rel="alternate" title="<__trans phrase="Responses to Comments from [_1]" params="<$mt:AuthorDisplayName encode_html="1"$>">" href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=feed&amp;_type=replies&amp;blog_id=<$mt:BlogID$>&amp;id=<$mt:AuthorID$>" />
+<link type="application/atom+xml" rel="alternate" title="Recent Actions from <$mt:AuthorDisplayName encode_html="1"$>" href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=feed&amp;_type=actions&amp;blog_id=<$mt:BlogID$>&amp;id=<$mt:AuthorID$>" />
+<link type="application/atom+xml" rel="alternate" title="Recent Entries from <$mt:AuthorDisplayName encode_html="1"$>" href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=feed&amp;_type=posts&amp;blog_id=<$mt:BlogID$>&amp;id=<$mt:AuthorID$>" />
+<link type="application/atom+xml" rel="alternate" title="Comments from <$mt:AuthorDisplayName encode_html="1"$>" href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=feed&amp;_type=comments&amp;blog_id=<$mt:BlogID$>&amp;id=<$mt:AuthorID$>" />
+<link type="application/atom+xml" rel="alternate" title="Responses to Comments from <$mt:AuthorDisplayName encode_html="1"$>" href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=feed&amp;_type=replies&amp;blog_id=<$mt:BlogID$>&amp;id=<$mt:AuthorID$>" />
 <script type="text/javascript">
 <!--
 function relations(following, followed, u) {
@@ -32,29 +31,29 @@ function relations(following, followed, u) {
 </script>
 </mt:SetVarBlock>
 
-<$mt:Include module="<__trans phrase="Header">" body_class="mt-profile-view"$>
+<$mt:Include module="Header" body_class="mt-profile-view"$>
 
-<$mt:Include module="<__trans phrase="Userpic">" userpic_type="profile" userpic_size="90"$>
+<$mt:Include module="Userpic" userpic_type="profile" userpic_size="90"$>
 
 <h1 id="page-title"><$mt:AuthorDisplayName encode_html="1"$></h1>
 
 <mt:IfLoggedIn element_id="edit_profile">
-<p><a id="edit_profile_link" href="#"><__trans phrase="Edit Profile"></a></p>
+<p><a id="edit_profile_link" href="#">Edit Profile</a></p>
 <mt:Else>
 <p class="edit-relation">
     <span id="following-status"></span>
     <mt:AuthorIfFollowing script="0">
-    <__trans phrase="You are following [_1]." params="<$mt:AuthorDisplayName encode_html="1"$>"> <$mt:AuthorUnfollowLink text="<__trans phrase="Unfollow">"$>
+    You are following <$mt:AuthorDisplayName encode_html="1"$>. <$mt:AuthorUnfollowLink text="Unfollow"$>
     <mt:Else>
-    <$mt:AuthorFollowLink text="<__trans phrase="Follow">"$>
+    <$mt:AuthorFollowLink text="Follow"$>
     </mt:AuthorIfFollowing>
 &nbsp;</p>
 
     <mt:Ignore>
         <mt:AuthorIfFollowed script="0">
-<p><__trans phrase="You are followed by [_1]." params="<$mt:AuthorDisplayName encode_html="1"$>"></p>
+<p>You are followed by <$mt:AuthorDisplayName encode_html="1"$>.</p>
         <mt:Else>
-<p><__trans phrase="You are not followed by [_1]." params="<$mt:AuthorDisplayName encode_html="1"$>"></p>
+<p>You are not followed by <$mt:AuthorDisplayName encode_html="1"$>.</p>
         </mt:AuthorIfFollowed>
     </mt:Ignore>
 
@@ -65,7 +64,7 @@ function relations(following, followed, u) {
 
 <ul id="profile-data">
 <mt:If tag="AuthorURL">
-    <li><strong><__trans phrase="Website:"></strong> <a href="<$mt:AuthorURL encode_html="1"$>" target="_blank"><$mt:AuthorURL regex_replace="/^\w+:\/\//","" encode_html="1"$></a></li>
+    <li><strong>Website:</strong> <a href="<$mt:AuthorURL encode_html="1"$>" target="_blank"><$mt:AuthorURL regex_replace="/^\w+:\/\//","" encode_html="1"$></a></li>
 </mt:If>
 <mt:Loop name="field_loop">
     <mt:If name="value">
@@ -75,12 +74,12 @@ function relations(following, followed, u) {
 </ul>
 
 <ul id="tabs"> 
-    <li><a href="#profile-recent-actions" class="active" onclick="switchTabs('tabs',this)"><__trans phrase="Recent Actions"></a></li> 
-    <li><a href="#profile-comment-threads" class="" onclick="switchTabs('tabs',this)"><__trans phrase="Comment Threads"></a></li> 
+    <li><a href="#profile-recent-actions" class="active" onclick="switchTabs('tabs',this)">Recent Actions</a></li> 
+    <li><a href="#profile-comment-threads" class="" onclick="switchTabs('tabs',this)">Comment Threads</a></li> 
 </ul>
 
 <div id="profile-recent-actions" class="tab_content"> 
-    <h3 class="tab_content_label"><__trans phrase="Recent Actions"></h3>
+    <h3 class="tab_content_label">Recent Actions</h3>
 
 <mt:Actions namespace="community_pack_recommend" include_blogs="all" sort_order="descend" lastn="30">
     <mt:ActionsHeader>
@@ -88,63 +87,63 @@ function relations(following, followed, u) {
     </mt:ActionsHeader>
     <mt:ActionsEntry>
         <li class="entry icon-entry">
-            <__trans phrase="Posted [_1] to [_2]" params='<a href="<$mt:EntryLink$>"><$mt:EntryTitle encode_html="1"$></a>%%<a href="<$mt:EntryBlogURL$>" class="icon-blog"><$mt:EntryBlogName$></a>'>
+            Posted <a href="<$mt:EntryLink$>"><$mt:EntryTitle encode_html="1"$></a> to <a href="<$mt:EntryBlogURL$>" class="icon-blog"><$mt:EntryBlogName$></a>
             <div class="excerpt"><$mt:EntryExcerpt$></div>
         </li>
     </mt:ActionsEntry>
     <mt:ActionsComment>
         <li class="comment icon-comment">
-            <__trans phrase="Commented on [_1]" params='<mt:CommentEntry><a href="<$mt:CommentLink$>"><$mt:EntryTitle encode_html="1"$></a></mt:CommentEntry>'>
+            Commented on <mt:CommentEntry><a href="<$mt:CommentLink$>"><$mt:EntryTitle encode_html="1"$></a></mt:CommentEntry>
             <div class="excerpt"><$mt:CommentBody words="40"$>...</div>
         </li>
     </mt:ActionsComment>
     <mt:ActionsFavorite>
         <li class="score icon-score">
-            <__trans phrase="Favorited [_1] on [_2]" params='<a href="<$mt:EntryLink$>"><$mt:EntryTitle encode_html="1"$></a>%%<a href="<$mt:EntryBlogURL$>" class="icon-blog"><$mt:EntryBlogName$></a>'>
+            Favorited <a href="<$mt:EntryLink$>"><$mt:EntryTitle encode_html="1"$></a> on <a href="<$mt:EntryBlogURL$>" class="icon-blog"><$mt:EntryBlogName$></a>
         </li>
     </mt:ActionsFavorite>
     <mt:ActionsFooter>
     </ul>
     </mt:ActionsFooter>
 <mt:Else>
-    <p class="note"><__trans phrase="No recent actions."></p>
+    <p class="note">No recent actions.</p>
 
 </mt:Actions>
 
-<img src="<$mt:StaticWebPath$>images/status_icons/feed.gif" alt="<__trans phrase="Subscribe to feed">" /> <a href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=feed&amp;_type=actions&amp;blog_id=<$mt:BlogID$>&amp;id=<$mt:AuthorID$>"><__trans phrase="Recent Actions from [_1]" params="<$mt:AuthorDisplayName encode_html="1"$>"></a></p>
+<img src="<$mt:StaticWebPath$>images/status_icons/feed.gif" alt="Subscribe to feed" /> <a href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=feed&amp;_type=actions&amp;blog_id=<$mt:BlogID$>&amp;id=<$mt:AuthorID$>">Recent Actions from <$mt:AuthorDisplayName encode_html="1"$></a></p>
 </div>
 
 <div id="profile-comment-threads" class="tab_content hidden"> 
-    <h3 class="tab_content_label"><__trans phrase="Comment Threads"></h3>
+    <h3 class="tab_content_label">Comment Threads</h3>
 
 <mt:AuthorCommentResponses lastn="5">  
     <mt:CommentsHeader>  
     <ul class="recent-actions">  
     </mt:CommentsHeader> 
         <li class="comment icon-comment">
-            <__trans phrase="[_1] commented on " params='<a href="<$mt:Var name="profile_view_url" encode_html="1"$><$mt:CommenterID$>"><$mt:CommenterName encode_html="1"$></a>'>
+            <a href="<$mt:Var name="profile_view_url" encode_html="1"$><$mt:CommenterID$>"><$mt:CommenterName encode_html="1"$></a> commented on 
                 <mt:CommentEntry><a href="<$mt:CommentLink$>"><$mt:EntryTitle encode_html="1"$></a></mt:CommentEntry>
             <div class="excerpt"><$mt:CommentBody words="100"$>...</div>
     <mt:CommentsFooter> 
     </ul> 
     </mt:CommentsFooter>  
 <mt:Else> 
-    <p class="note"><__trans phrase="No responses to comments."></p> 
+    <p class="note">No responses to comments.</p> 
 </mt:AuthorCommentResponses>  
-<img src="<$mt:StaticWebPath$>images/status_icons/feed.gif" alt="<__trans phrase="Subscribe to feed">" /> <a href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=feed&_type=replies&blog_id=<$mt:BlogID$>&id=<$mt:AuthorID$>"><__trans phrase="Responses to Comments from [_1]" params="<$mt:AuthorDisplayName encode_html="1"$>"></a></p>
+<img src="<$mt:StaticWebPath$>images/status_icons/feed.gif" alt="Subscribe to feed" /> <a href="<$mt:CGIPath$><$mt:CommunityScript$>?__mode=feed&_type=replies&blog_id=<$mt:BlogID$>&id=<$mt:AuthorID$>">Responses to Comments from <$mt:AuthorDisplayName encode_html="1"$></a></p>
 
 </div>
 
 <mt:SetVarBlock name="profile_widgets">
 <div class="widget-following widget">
-    <h3 class="widget-header"><__trans phrase="Following"></h3>
+    <h3 class="widget-header">Following</h3>
     <div class="widget-content">
 <mt:AuthorFollowing>
     <mt:If name="__first__">
         <ul class="user-listing">
     </mt:If>
             <li class="pkg">
-                <$mt:Include module="<__trans phrase="Userpic">" userpic_size="36" userpic_type="userlist"$>
+                <$mt:Include module="Userpic" userpic_size="36" userpic_type="userlist"$>
                 <a href="<$mt:Var name="profile_view_url" encode_html="1"$><$mt:AuthorID$>" class="user-name"><$mt:AuthorDisplayName encode_html="1"$></a>
                 <a href="<$mt:AuthorURL$>" class="user-url"><$mt:AuthorURL regex_replace="/^\w+:\/\//","" $></a>
             </li>
@@ -152,20 +151,20 @@ function relations(following, followed, u) {
         </ul>
     </mt:If>
 <mt:Else>
-    <p class="note"><__trans phrase="Not following anyone"></p>
+    <p class="note">Not following anyone</p>
 </mt:AuthorFollowing>
     </div>
 </div>
 <mt:if name="profile_self">
     <div class="widget-followers widget">
-        <h3 class="widget-header"><__trans phrase="Followers"></h3>
+        <h3 class="widget-header">Followers</h3>
         <div class="widget-content">
     <mt:AuthorFollowers>
         <mt:If name="__first__">
             <ul class="user-listing">
         </mt:If>
                 <li class="pkg">
-                    <$mt:Include module="<__trans phrase="Userpic">" userpic_size="36" userpic_type="userlist"$>
+                    <$mt:Include module="Userpic" userpic_size="36" userpic_type="userlist"$>
                     <a href="<$mt:Var name="profile_view_url" encode_html="1"$><$mt:AuthorID$>" class="user-name"><$mt:AuthorDisplayName encode_html="1"$></a>
                     <a href="<$mt:AuthorURL$>" class="user-url"><$mt:AuthorURL regex_replace="/^\w+:\/\//","" $></a>
                 </li>
@@ -173,7 +172,7 @@ function relations(following, followed, u) {
             </ul>
         </mt:If>
     <mt:Else>
-        <p class="note"><__trans phrase="Not being followed"></p>
+        <p class="note">Not being followed</p>
     </mt:AuthorFollowers>
         </div>
     </div>
@@ -181,8 +180,8 @@ function relations(following, followed, u) {
 </mt:SetVarBlock>
 
 <mt:IfBlog>
-<$mt:Include module="<__trans phrase="Footer">"$>
+<$mt:Include module="Footer"$>
 <mt:Else>
-<$mt:Include module="<__trans phrase="Footer">" hide_sidebar="1"$>
+<$mt:Include module="Footer" hide_sidebar="1"$>
 </mt:IfBlog>
-</__trans_section>
+

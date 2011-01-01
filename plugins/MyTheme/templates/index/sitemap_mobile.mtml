@@ -1,0 +1,53 @@
+<$mt:Include module="Initialize"$>
+<?xml version="1.0" encoding="UTF-8" ?>
+ <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
+       <mt:Ignore>### START INDEX TEMPLATES ###</mt:Ignore>
+    <url>
+        <loc><$mt:Link template="m_main_index"$></loc>
+        <mobile:mobile/>
+    </url>
+    <url>
+        <loc><$mt:Link template="m_category_archives"$></loc>
+        <mobile:mobile/>
+    </url>
+    <url>
+        <loc><$mt:Link template="mobile_category_index"$></loc>
+        <mobile:mobile/>
+    </url>
+       <mt:Ignore>### END INDEX TEMPLATES ###</mt:Ignore>
+
+       <mt:Ignore>### START PAGE ARCHIVES ###</mt:Ignore>
+    <mt:IfArchiveTypeEnabled archive_type="Page">
+    <mt:Pages>
+    <url>
+        <loc><$mt:PagePermalink encode_xml="1" regex_replace="$rep","$rer"$></loc>
+        <mobile:mobile/>
+    </url>
+    </mt:Pages>
+    </mt:IfArchiveTypeEnabled>
+       <mt:Ignore>### END PAGE ARCHIVES ###</mt:Ignore>
+	
+       <mt:Ignore>### START INDIVIDUAL ARCHIVES ###</mt:Ignore>
+    <mt:IfArchiveTypeEnabled archive_type="Individual">
+    <mt:Entries lastn="999999">
+    <url>
+        <loc><$mt:EntryPermalink encode_xml="1" regex_replace="$rep","$rer"$></loc>
+        <mobile:mobile/>
+    </url>
+    </mt:Entries>
+    </mt:IfArchiveTypeEnabled>
+       <mt:Ignore>### END INDIVIDUAL ARCHIVES ###</mt:Ignore>
+	
+       <mt:Ignore>### START CATEGORY ARCHIVES ###</mt:Ignore>
+    <mt:IfArchiveTypeEnabled archive_type="Category">
+    <mt:Categories>
+    <url>
+        <loc><$mt:CategoryArchiveLink encode_xml="1" regex_replace="$rep","$rer"$></loc>
+        <mobile:mobile/>
+    </url>
+    </mt:Categories>
+    </mt:IfArchiveTypeEnabled>
+       <mt:Ignore>### END CATEGORY ARCHIVES ###</mt:Ignore>
+
+</urlset>

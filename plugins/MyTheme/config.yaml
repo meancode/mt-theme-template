@@ -1,11 +1,11 @@
 id: MyTheme
 key: MyTheme
 name: My Theme
-version: 1.0
+version: 0.4
 author_name: Your Name
 author_link: http://example.com/
 plugin_link: https://example.com/mytheme
-description: This is a skeloton theme for Movable Type and Melody. Be sure to change all these settings.
+description: This is a skeloton theme for Movable Type 4 and Melody. Be sure to change all these settings.
 
 static_version: 1
 blog_preferences:

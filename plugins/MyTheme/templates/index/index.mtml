@@ -1,53 +1,31 @@
-<!DOCTYPE html>  
-
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:fb="http://developers.facebook.com/schema/"> <!--<![endif]-->
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:fb="http://developers.facebook.com/schema/"> <!--<![endif]-->
 <head profile="http://gmpg.org/xfn/11">
 	
 	<meta charset="<$mt:PublishCharset$>">
 	<title><mt:if tag="HomeTitle"><$mt:HomeTitle$><mt:Else><$mt:BlogName encode_html="1"$></mt:if></title>
-	<!--[if IE]><meta http-equiv="imagetoolbar" content="no" /><![endif]-->
 	<mt:if tag="OGSiteName"><meta property="og:site_name" content="<$mt:OGSiteName$>"/></mt:if>
 	<mt:if tag="OGAppID"><meta property="fb:app_id" content="<$mt:OGAppID$>"/></mt:if>
 	<mt:if tag="OGPageID"><meta property="fb:page_id" content="<$mt:OGPageID$>" /></mt:if>
 	<mt:if tag="OGAdminID"><meta property="fb:admins" content="<$mt:OGAdminID$>"/></mt:if>
 	<meta name="robots" http-equiv="robots" content="index, follow" />
-	<mt:if tag="MetaPublisher"><meta name="publisher" http-equiv="publisher" content="<$mt:MetaPublisher$>" /></mt:if>
 	<meta name="language" http-equiv="language" content="<$mt:BlogLanguage$>" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<link rel="start" href="<$mt:BlogURL$>" title="Home" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+	<mt:if tag="MetaPublisher"><meta name="publisher" http-equiv="publisher" content="<$mt:MetaPublisher$>" /></mt:if>
 	<mt:if tag="AppleTouchIcon"><link rel="apple-touch-icon<mt:If tag="AppleTouchPrecomposed">-precomposed</mt:If>" href="<mt:AppleTouchIconAsset><mt:AssetURL></mt:AppleTouchIconAsset>" /></mt:If>
 	<mt:if tag="AppleTouchIcon72"><link rel="apple-touch-icon<mt:If tag="AppleTouchPrecomposed">-precomposed</mt:If>" sizes="72x72" href="<mt:AppleTouchIcon72Asset><mt:AssetURL></mt:AppleTouchIcon72Asset>" /></mt:If>
 	<mt:if tag="AppleTouchIcon114"><link rel="apple-touch-icon<mt:If tag="AppleTouchPrecomposed">-precomposed</mt:If>" sizes="114x114" href="<mt:AppleTouchIcon114Asset><mt:AssetURL></mt:AppleTouchIcon114Asset>" /></mt:If>
 	<mt:IfiOSWebApp><meta name="apple-mobile-web-app-capable" content="yes" /></mt:IfiOSWebApp>
 	<mt:IfiOSWebApp><meta name="apple-mobile-web-app-status-bar-style" content="<$mt:AppleStatusBar$>" /></mt:IfiOSWebApp>
 	<link rel="alternate" type="application/atom+xml" title="<$mt:OGSiteName$> - Recent Articles" href="<$mt:Link template="feed_recent"$>" />
-<mt:Unless name="cgi-page" value="cgi-page"><?php
-function is_android(){
-    return strstr($_SERVER['HTTP_USER_AGENT'], 'Android');
-}
-function is_ipad(){
-    return strstr($_SERVER['HTTP_USER_AGENT'], 'iPad');
-}
-if (is_android()){
-    //Android 1.x User
-	echo '<mt:If tag="AndroidShortcutIcon">	<link rel="apple-touch-icon-precomposed" href="<mt:AndroidShortcutIconAsset><mt:AssetURL></mt:AndroidShortcutIconAsset>"/></mt:If>';
-}
-elseif (is_ipad()){
-    //iPad User
-	echo '<mt:If tag="AppleStartupiPad">	<link rel="apple-touch-startup-image" href="<mt:AppleStartupiPadAsset><mt:AssetURL></mt:AppleStartupiPadAsset>"></mt:If>';
-}
-else {
-	//Everyone Else
-	echo '<mt:If tag="AppleStartupImage">	<link rel="apple-touch-startup-image" href="<mt:AppleStartupImageAsset><mt:AssetURL></mt:AppleStartupImageAsset>"></mt:If>';	
-}
-?></mt:Unless>
-<mt:If name="main_menu_test">
+
+<mt:If name="main_menu">
 	<mt:if tag="OGSiteName"><meta property="og:title" content="<$mt:OGSiteName$>" /></mt:If>
 	<meta property="og:type" content="website"/>
 	<mt:if tag="OGDescription"><meta property="og:description" content="<$mt:OGDescription$>" /></mt:If>

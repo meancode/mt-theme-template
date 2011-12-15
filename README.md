@@ -1,6 +1,4 @@
-# MT Theme Template 0.3
-
-**NOT READY FOR PRIME TIME YET**
+# MT Theme Template 0.4
 
 The purpose here is twofold: 
 
@@ -17,14 +15,14 @@ The purpose here is twofold:
 
 ## Melody Prerequisites
 
-* Melody 1.0.0 Beta 2 or higher [Download](https://github.com/openmelody/melody)
+* Melody 1 higher [Download](https://github.com/openmelody/melody)
 * ConfigAssistant and Theme Manager are both bundled with Melody
 
 ## Theme Foundation
 
 This theme is based on two solid frameworks, [HTML 5 Boilerplate](https://github.com/paulirish/html5-boilerplate) and [960 Grid System](https://github.com/nathansmith/960-Grid-System). These have been enhanced using Theme Options in Movable Type/Melody. This theme uses the following frameworks and libraries:
 
-* HTML 5 Boilerplate _0.9.5_
+* HTML 5 Boilerplate _2.0_
 * Modernizr _1.6_
 * jQuery _1.4.2_
 * 960 Grid System _last updated 11-18-2010_
@@ -41,6 +39,7 @@ Notes:
 * I am assuming that you will be using Apache, I have made changes to the `.htaccess` and have set Movable Type to write this file to the server. If you are using IIS or nginx, I have not provided similar modifications. This may be in a future release of this theme.
 * Because I am assuming an Apache server, I have taken out the `X-UA-Compatible` META tag, since the `.htaccess` file does this for me. Besides this being redundant code in an Apache environment, it is [invalid HTML5](https://github.com/paulirish/html5-boilerplate/issues/closed#issue/257) as well.
 * **Apple Touch Icon** - You may wish to use the `precomposed` to be compatible with Android devices. This takes a little extra effort on your part to create the gloss effect (if desired). [Download a template with gloss](http://blog.cocoia.com/2010/iphone-4-icon-psd-file/).
+* Consider [adding a manifest.appcache](http://html5boilerplate.com/docs/Offline/).
 
 ## 960 Grid System
 
@@ -59,6 +58,15 @@ This section will explain what to modify before you get started building out you
 -   Change name, author\_name, author\_link and description in `config.yaml`
 -   Modify `default_prefs.yaml` using [this Melody documentation](https://github.com/openmelody/melody/wiki/designguide-prefbundles) as a guide.
 
+## Changes/Additions from the HTML5 Boilerplate
+
+* Added 3 XML Namespace links to the HTML tag; two for Open Graph and one for Facebook Insights.
+* Added XFN Profile to the HEAD tag.
+* Set `meta charset` to the Movable Type/Melody charset `<$mt:PublishCharset$>`.
+* Created a field in Theme Options for Homepage Title. You should use other template tags for other Index and Archive templates. If no `<$mt:HomeTitle$>` is given, `<$mt:BlogName$>` is used.
+* Added Open Graph tags, modify these under Theme Options, these include `og:site_name`, `fb:app_id`, `fb:page_id`, `fb:admins`.
+* Set `meta language` to the Movable Type/Melody charset `<$mt:BlogLanguage$>`.
+
 
 # About Meancode Media, LLC
 
@@ -68,7 +76,7 @@ We provide web design and development, as well as hosting services. Specializing
 
 # Copyright
 
-Copyright 2010, Meancode Media, LLC. All rights reserved.
+Copyright 2011, Meancode Media, LLC. All rights reserved.
 
 # License
 

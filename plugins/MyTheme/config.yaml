@@ -89,8 +89,8 @@ template_sets:
         options:
             fieldsets:
                 fs_group1:
-                    label: 'Group 1'
-                    hint: 'Hint goes here.'
+                    label: 'Analytics & SEO'
+                    hint: 'This section includes the javascript and verification code to track analytics on ths site. It also includes META data for SEO.'
                     order: 1
                 fs_group2:
                     label: 'Group 2'
@@ -112,53 +112,109 @@ template_sets:
                     label: 'Group 6'
                     hint: 'Hint goes here.'
                     order: 6
-            mytheme_text:
+            analytics_code:
                 type: text
-                label: "Single-line Text"
-                hint: ""
-                tag: 'MyThemeText'
+                label: 'Google Analytics Account ID'
+                hint: 'This looks like UA-XXXXXXX-X.'
+                tag: 'AnalyticsJavascriptGoogle'
                 order: 1
                 fieldset: fs_group1
-            mytheme_select:
-                type: select
-                label: "Drop Dpwn"
-                values: Yes,No
-                hint: ""
-                tag: 'MyThemeSelect'
+            ga_position_toggle:
+                type: radio
+                label: 'Google Analytics Placement'
+                values: Top, Bottom, Not Used
+                hint: 'Do you want the Google Analytics code inserted into the Top or Bottom of every web page? Select Do Not Insert if you are not using Google Analytics.'
+                tag: 'GoogleAnalyticsPlacement'
+                default: 'Do Not Insert'
+                order: 1.2
+                fieldset: fs_group1
+            analytics_code2:
+                type: textarea
+                rows: 7
+                label: 'Hitslink Analytics Javascript'
+                hint: 'Enter in the javascript that will be placed on every page.'
+                tag: 'AnalyticsJavascriptHitslink'
+                order: 1.5
+                fieldset: fs_group1
+            analytics_code3:
+                type: textarea
+                rows: 7
+                label: 'Quantcast Analytics Javascript'
+                hint: 'Enter in the javascript that will be placed on every page.'
+                tag: 'AnalyticsJavascriptQuantcast'
+                order: 1.7
+                fieldset: fs_group1
+            google_var:
+                type: text
+                label: 'Google Verification'
+                hint: 'Enter in the verification code given to you by Google Web Master Tools. For example, for the tag &lt;META name="google-site-verification" content="YOUR_CODE"&gt; you would enter in "YOUR_CODE" here.'
+                tag: 'GoogleWebVerify'
                 order: 2
                 fieldset: fs_group1
-            mytheme_file_blog:
-                type: file
-                destination: images/%{10}e
-                label: "Local File"
-                hint: ""
-                tag: 'MyThemeLocalFile'
-                scope: blog
+            yahoo_var:
+                type: text
+                label: 'Yahoo Verification'
+                hint: 'Enter in the verification code given to you by Google Web Master Tools. For example, for the tag &lt;META name="y_key    " content="YOUR_CODE"&gt; you would enter in "YOUR_CODE" here.'
+                tag: 'YahooWebVerify'
+                order: 3
+                fieldset: fs_group1
+            bing_var:
+                type: text
+                label: 'Bing Verification'
+                hint: 'Enter in the verification code given to you by Google Web Master Tools. For example, for the tag &lt;META name="msvalidate.01" content="YOUR_CODE"&gt; you would enter in "YOUR_CODE" here.'
+                tag: 'BingWebVerify'
                 order: 4
                 fieldset: fs_group1
-            mytheme_file:
-                type: file
-                destination: images/%{10}e
-                label: "System File"
-                hint: ""
-                tag: 'MyThemeFile'
-                order: 4
+            meta_data_spacer:
+                type: separator
+                label: 'Search Engine Optimization'
+                hint: 'Below are settings for the site Search Engine Optimization, including Meta Data.'
+                order: 5
                 fieldset: fs_group1
-            mytheme_ifcheck:
-                type: checkbox
-                label: "If Checkbox?"
-                hint: ""
-                tag: 'IfMyThemeCheck?'
-                default: 0
-                order: 1
+            home_title:
+                type: text
+                label: 'Home Title'
+                hint: 'The &lt;html&gt; title tag to use on the front door. Use keywords you want your site to score high in.'
+                tag: 'HomeTitle'
+                order: 6
                 fieldset: fs_group1
-            mytheme_textarea:
+            meta_description:
                 type: textarea
-                label: "Textarea"
-                hint: ""
-                tag: 'MyThemeTextarea'
-                order: 1
-                fieldset: fs_group1                
+                rows: 3
+                label: 'Description'
+                hint: 'Your META Description tag for the Home Page, and pages that have no defined META info.'
+                tag: 'MetaDescription'
+                order: 7
+                fieldset: fs_group1
+            meta_keywords:
+                type: textarea
+                rows: 2
+                label: 'Keywords'
+                hint: 'Your META Keywords tag for the Home Page, and pages that have no defined META info.'
+                tag: 'MetaKeywords'
+                order: 8
+                fieldset: fs_group1
+            meta_publisher:
+                type: text
+                label: 'Publisher'
+                hint: 'Your META Publisher tag for the site.'
+                tag: 'MetaPublisher'
+                order: 9
+                fieldset: fs_group1
+            meta_author:
+                type: text
+                label: 'Author'
+                hint: 'Your META Author tag for the site.'
+                tag: 'MetaAuthor'
+                order: 10
+                fieldset: fs_group1
+            meta_email:
+                type: text
+                label: 'Email'
+                hint: 'Your META Email tag for the site.'
+                tag: 'MetaEmail'
+                order: 11
+                fieldset: fs_group1
 skip_static:
     - index.html
     - readme.txt

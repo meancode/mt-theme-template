@@ -38,7 +38,7 @@ Notes:
 * Because I am assuming an Apache server, I have taken out the `X-UA-Compatible` META tag, since the `.htaccess` file does this for me. Besides this being redundant code in an Apache environment, it is [invalid HTML5](https://github.com/paulirish/html5-boilerplate/issues/closed#issue/257) as well.
 * **Apple Touch Icon** - You may wish to use the `precomposed` to be compatible with Android devices. This takes a little extra effort on your part to create the gloss effect (if desired). [Download a template with gloss](http://blog.cocoia.com/2010/iphone-4-icon-psd-file/).
 * Consider [adding a manifest.appcache](http://html5boilerplate.com/docs/Offline/).
-* Delete the two CFInstall script lines if you wish to support IE 6 [more info](http://www.chromium.org/developers/how-tos/chrome-frame-getting-started).
+* Delete the two CFInstall script lines if you wish to support IE 6 -- [more info](http://www.chromium.org/developers/how-tos/chrome-frame-getting-started).
 
 ## 960 Grid System
 

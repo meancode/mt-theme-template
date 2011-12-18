@@ -23,12 +23,10 @@ The purpose here is twofold:
 This theme is based on two solid frameworks, [HTML 5 Boilerplate](https://github.com/paulirish/html5-boilerplate) and [960 Grid System](https://github.com/nathansmith/960-Grid-System). These have been enhanced using Theme Options in Movable Type/Melody. This theme uses the following frameworks and libraries:
 
 * HTML 5 Boilerplate _2.0_
-* Modernizr _1.6_
-* jQuery _1.4.2_
+* Modernizr _2.0.6_
+* jQuery _1.7.1_
+* Colorbox _1.3.16_
 * 960 Grid System _last updated 11-18-2010_
-* [AnythingSlider for Movable Type](https://github.com/meancode/mt-plugin-anythingslider)
-* [Colorbox](https://github.com/jackmoore/colorbox)
-* [Twitter @Anywhere](http://dev.twitter.com/anywhere)
 
 ## HTML 5 Boilerplate
 
@@ -40,6 +38,7 @@ Notes:
 * Because I am assuming an Apache server, I have taken out the `X-UA-Compatible` META tag, since the `.htaccess` file does this for me. Besides this being redundant code in an Apache environment, it is [invalid HTML5](https://github.com/paulirish/html5-boilerplate/issues/closed#issue/257) as well.
 * **Apple Touch Icon** - You may wish to use the `precomposed` to be compatible with Android devices. This takes a little extra effort on your part to create the gloss effect (if desired). [Download a template with gloss](http://blog.cocoia.com/2010/iphone-4-icon-psd-file/).
 * Consider [adding a manifest.appcache](http://html5boilerplate.com/docs/Offline/).
+* Delete the two CFInstall script lines if you wish to support IE 6 [more info](http://www.chromium.org/developers/how-tos/chrome-frame-getting-started).
 
 ## 960 Grid System
 
@@ -66,6 +65,9 @@ This section will explain what to modify before you get started building out you
 * Created a field in Theme Options for Homepage Title. You should use other template tags for other Index and Archive templates. If no `<$mt:HomeTitle$>` is given, `<$mt:BlogName$>` is used.
 * Added Open Graph tags, modify these under Theme Options, these include `og:site_name`, `fb:app_id`, `fb:page_id`, `fb:admins`.
 * Set `meta language` to the Movable Type/Melody charset `<$mt:BlogLanguage$>`.
+* Added my personal favorite [PNF Fix](http://www.twinhelix.com/css/iepngfix/).
+* Added [Colorbox](https://github.com/jackmoore/colorbox) to the template.
+* Added [Twitter @Anywhere](http://dev.twitter.com/anywhere), you will need to setup an application for it.
 
 
 # About Meancode Media, LLC

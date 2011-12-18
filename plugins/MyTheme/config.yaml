@@ -118,7 +118,7 @@ template_sets:
                 hint: ""
                 tag: 'MyThemeText'
                 order: 1
-                fieldset: general
+                fieldset: fs_group1
             mytheme_select:
                 type: select
                 label: "Drop Dpwn"
@@ -126,7 +126,7 @@ template_sets:
                 hint: ""
                 tag: 'MyThemeSelect'
                 order: 2
-                fieldset: general
+                fieldset: fs_group1
             mytheme_file_blog:
                 type: file
                 destination: images/%{10}e
@@ -135,7 +135,7 @@ template_sets:
                 tag: 'MyThemeLocalFile'
                 scope: blog
                 order: 4
-                fieldset: general
+                fieldset: fs_group1
             mytheme_file:
                 type: file
                 destination: images/%{10}e
@@ -143,7 +143,7 @@ template_sets:
                 hint: ""
                 tag: 'MyThemeFile'
                 order: 4
-                fieldset: general
+                fieldset: fs_group1
             mytheme_ifcheck:
                 type: checkbox
                 label: "If Checkbox?"
@@ -151,14 +151,14 @@ template_sets:
                 tag: 'IfMyThemeCheck?'
                 default: 0
                 order: 1
-                fieldset: gallery
+                fieldset: fs_group1
             mytheme_textarea:
                 type: textarea
                 label: "Textarea"
                 hint: ""
                 tag: 'MyThemeTextarea'
                 order: 1
-                fieldset: info                
+                fieldset: fs_group1                
 skip_static:
     - index.html
     - readme.txt

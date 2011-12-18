@@ -24,8 +24,6 @@
 	<mt:IfiOSWebApp><meta name="apple-mobile-web-app-capable" content="yes" /></mt:IfiOSWebApp>
 	<mt:IfiOSWebApp><meta name="apple-mobile-web-app-status-bar-style" content="<$mt:AppleStatusBar$>" /></mt:IfiOSWebApp>
 	<link rel="alternate" type="application/atom+xml" title="<$mt:OGSiteName$> - Recent Articles" href="<$mt:Link template="feed_recent"$>" />
-
-<mt:If name="main_menu">
 	<mt:if tag="OGSiteName"><meta property="og:title" content="<$mt:OGSiteName$>" /></mt:If>
 	<meta property="og:type" content="website"/>
 	<mt:if tag="OGDescription"><meta property="og:description" content="<$mt:OGDescription$>" /></mt:If>
@@ -37,57 +35,21 @@
 	<mt:if tag="OGImage"><link rel="image_src" href="<mt:OGImageAsset><mt:AssetThumbnailURL width="130" height="110"></mt:OGImageAsset>" /></mt:If>
 	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="<$mt:Link template="rsd"$>" />
 	<link rel="canonical" href="<$mt:BlogURL$>"/>
-</mt:If>
-<mt:IfArchiveType type="Individual">
-	<meta property="og:title" content="<$mt:EntryTitle encode_html="1"$>" />
-	<meta property="og:type" content="article"/>
-	<meta property="og:description" content="<$mt:EntryExcerpt$>" />
-	<meta property="og:image" content="<mt:If tag="EntryFeaturedImage"><mt:SetVarBlock name="aid"><mt:EntryFeaturedImage></mt:SetVarBlock><mt:EntryFeaturedImageAsset id="$aid"><mt:CroppedAsset label="Entry Summary"><$mt:AssetURL$><mt:else><$mt:AssetThumbnailURL width="100"$></mt:CroppedAsset></mt:EntryFeaturedImageAsset><mt:Else><mt:EntryAssets lastn="1"><mt:AssetThumbnailURL width="130" height="110"></mt:EntryAssets></mt:If>" />
-	<meta name="description" content="<$mt:EntryExcerpt$>">
-	<meta name="keywords" content="<mt:if tag="EntryKeywords"><$mt:EntryKeywords$><mt:Else><mt:If tag="EntryTags"><mt:EntryTags glue=', '><$mt:TagName$></mt:EntryTags></mt:If></mt:If>">
-	<meta name="author" http-equiv="author" content="<$mt:EntryAuthorDisplayName$>" />
-	<meta name="email" http-equiv="email" content="<$mt:EntryAuthorEmail$>" />
-	<link rel="image_src" href="<mt:If tag="EntryFeaturedImage"><mt:SetVarBlock name="aid"><mt:EntryFeaturedImage></mt:SetVarBlock><mt:EntryFeaturedImageAsset id="$aid"><mt:CroppedAsset label="Entry Summary"><$mt:AssetURL$><mt:else><$mt:AssetThumbnailURL width="100"$></mt:CroppedAsset></mt:EntryFeaturedImageAsset><mt:Else><mt:EntryAssets lastn="1"><mt:AssetThumbnailURL width="130" height="110"></mt:EntryAssets></mt:If>" />
-	<mt:IfUseYOURLS><link rel="shortlink" href="<mt:EntryTwitterShortURL>" /></mt:IfUseYOURLS>
-	<link rel="canonical" href="<$mt:EntryPermalink encode_html="1"$>"/>
-	<link rel="alternate" type="application/atom+xml" title="Recent Comments on <$mt:EntryTitle encode_html="1"$>" href="<$mt:EntryPermalink$>.xml">
-	<mt:EntryPrevious><link rel="prev" href="<$mt:EntryPermalink$>" title="<$mt:EntryTitle encode_html="1"$>" rel="bookmark" /></mt:EntryPrevious>
-	<mt:EntryNext><link rel="next" href="<$mt:EntryPermalink$>" title="<$mt:EntryTitle encode_html="1"$>" rel="bookmark" /></mt:EntryNext>
-	<script type="text/javascript">
-<mt:IfDiggEnabled>
-		digg_url = '<mt:EntryPermalink encode_js="1">';
-		digg_window = 'new';
-		digg_title = '<mt:EntryTitle encode_js="1">';
-</mt:IfDiggEnabled>
-		mt.entry = { 
-		id: <$mt:EntryID$>,
-		permalink: '<$mt:EntryPermalink$>'
-	};
-	</script>
-</mt:IfArchiveType>
-<mt:IfArchiveType type="Page">
-	<meta property="og:title" content="<$mt:PageTitle encode_html="1"$>" />
-	<meta property="og:type" content="article"/>
-	<meta property="og:description" content="<$mt:PageExcerpt$>" />
-	<meta property="og:image" content="<mt:If tag="PageFeaturedImage"><mt:SetVarBlock name="aid"><mt:PageFeaturedImage></mt:SetVarBlock><mt:PageFeaturedImageAsset id="$aid"><mt:CroppedAsset label="Page Summary"><$mt:AssetURL$><mt:else><$mt:AssetThumbnailURL width="100"$></mt:CroppedAsset></mt:PageFeaturedImageAsset><mt:Else><mt:PageAssets lastn="1"><mt:AssetThumbnailURL width="130" height="110"></mt:PageAssets></mt:If>" />
-	<meta name="description" content="<$mt:PageExcerpt$>">
-	<meta name="keywords" content="<mt:if tag="PageKeywords"><$mt:PageKeywords$><mt:Else><mt:If tag="PageTags"><mt:PageTags glue=', '><$mt:TagName$></mt:PageTags></mt:If></mt:If>">
-	<meta name="author" http-equiv="author" content="<$mt:PageAuthorDisplayName$>" />
-	<meta name="email" http-equiv="email" content="<$mt:PageAuthorEmail$>" />
-	<link rel="image_src" href="<mt:If tag="PageFeaturedImage"><mt:SetVarBlock name="aid"><mt:PageFeaturedImage></mt:SetVarBlock><mt:PageFeaturedImageAsset id="$aid"><mt:CroppedAsset label="Page Summary"><$mt:AssetURL$><mt:else><$mt:AssetThumbnailURL width="100"$></mt:CroppedAsset></mt:PageFeaturedImageAsset><mt:Else><mt:PageAssets lastn="1"><mt:AssetThumbnailURL width="130" height="110"></mt:PageAssets></mt:If>" />
-	<link rel="canonical" href="<$mt:PagePermalink encode_html="1"$>"/>
-	<mt:PagePrevious><link rel="prev" href="<$mt:PagePermalink$>" title="<$mt:PageTitle encode_html="1"$>" rel="bookmark" /></mt:PagePrevious>
-	<mt:PageNext><link rel="next" href="<$mt:PagePermalink$>" title="<$mt:PageTitle encode_html="1"$>" rel="bookmark" /></mt:PageNext>
-</mt:IfArchiveType>
-
 	<link rel="stylesheet" href="<$mt:Link template="base_styles"$>?v=<$mt:SiteRevision$>" type="text/css" />
 	<link rel="stylesheet" href="<mt:PluginStaticWebPath component="MyTheme">css/grid.css?v=<$mt:SiteRevision$>" type="text/css" />
 	<link rel="stylesheet" href="<$mt:PluginStaticWebPath component="MyTheme"$>css/theme.css?v=<$mt:SiteRevision$>" type="text/css" />
 	<link rel="stylesheet" href="<mt:PluginStaticWebPath component="MyTheme">css/colorbox.css?v=<$mt:SiteRevision$>" type="text/css" />
-	
 	<script type="text/javascript" src="http://platform.twitter.com/anywhere.js?id=<$mt:TwitterAnywhereID$>&amp;v=1"></script>
-	<script type="text/javascript" src="<mt:PluginStaticWebPath component="MyTheme">js/libs/modernizr-1.6.min.js"></script>
-<$mt:AnalyticsJavascript$>
+	<script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
+	<script type="text/javascript" src="<mt:PluginStaticWebPath component="MyTheme">js/libs/modernizr-2.0.6.min.js"></script>
+
+    <!--[if lt IE 7 ]>
+    <style type="text/css">
+    img, div, a, input, button { behavior: url(<$mt:Link template="iepngfix"$>) }
+    </style>
+    <script type="text/javascript" src="<$mt:PluginStaticWebPath component="TMR"$>css/iepngfix_tilebg.js"></script>
+    <![endif]-->
+
 </head>
 <body>
   <div id="container">
@@ -106,8 +68,8 @@
 
 
 	<script type="text/javascript" src="<$mt:Link template="javascript_mt"$>"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
-	<script>!window.jQuery && document.write(unescape('%3Cscript type="text/javascript" src="<mt:PluginStaticWebPath component="MyTheme">js/libs/jquery-1.4.2.js"%3E%3C/script%3E'))</script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="<$mt:PluginStaticWebPath component="MyTheme"$>js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 	<script type="text/javascript" src="<$mt:PluginStaticWebPath component="MyTheme"$>js/libs/jquery.form.js"></script>
 	<script type="text/javascript" src="<$mt:PluginStaticWebPath component="MyTheme"$>js/libs/jquery.phpdate.js"></script>
 	<script type="text/javascript" src="<$mt:PluginStaticWebPath component="MyTheme"$>js/libs/jquery.mtauth.js"></script>
@@ -118,15 +80,19 @@
 	<script type="text/javascript" src="<$mt:Link template="scripts"$>?v=<$mt:SiteRevision$>"></script>
 	<script type="text/javascript" src="<$mt:PluginStaticWebPath component="MyTheme"$>js/libs/theme.js?v=<$mt:SiteRevision$>"></script>
 	<script type="text/javascript" src="<$mt:Link template="javascript"$>"></script>
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
   
 	<!--[if lt IE 7 ]>
-	<script src="<mt:PluginStaticWebPath component="MyTheme">js/libs/pngfix.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 	<![endif]-->
 
-	<mt:DevelopmentMode><!-- yui profiler and profileviewer -->
-	<script src="<mt:PluginStaticWebPath component="MyTheme">js/profiling/yahoo-profiling.min.js"></script>
-	<script src="<mt:PluginStaticWebPath component="MyTheme">js/profiling/config.js"></script>
-	<!-- end profiling code --></mt:DevelopmentMode>
+	<script>
+		var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
   
 </body>
 </html>

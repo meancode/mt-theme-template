@@ -3,16 +3,25 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:fb="http://developers.facebook.com/schema/"> <!--<![endif]-->
-<head profile="http://gmpg.org/xfn/11">
-	
+<head>
+
 	<meta charset="<$mt:PublishCharset$>">
+	<mt:if tag="GoogleWebVerify"><meta name="google-site-verification" content="<$mt:GoogleWebVerify$>" /></mt:if>
+	<mt:if tag="BingWebVerify"><meta name="msvalidate.01" content="<$mt:BingWebVerify$>" /></mt:if>
+	<mt:if tag="YahooWebVerify"><meta name="y_key" content="<$mt:YahooWebVerify$>"></mt:if>
+	<mt:if tag="BitlyVerify"><meta name="bitly-verification" content="<$mt:BitlyVerify$>"/></mt:if>
 	<title><mt:if tag="HomeTitle"><$mt:HomeTitle$><mt:Else><$mt:BlogName encode_html="1"$></mt:if></title>
-	<mt:if tag="OGSiteName"><meta property="og:site_name" content="<$mt:OGSiteName$>"/></mt:if>
 	<mt:if tag="OGAppID"><meta property="fb:app_id" content="<$mt:OGAppID$>"/></mt:if>
 	<mt:if tag="OGPageID"><meta property="fb:page_id" content="<$mt:OGPageID$>" /></mt:if>
 	<mt:if tag="OGAdminID"><meta property="fb:admins" content="<$mt:OGAdminID$>"/></mt:if>
+	<mt:if tag="OGSiteName"><meta property="og:site_name" content="<$mt:OGSiteName$>"/></mt:if>
 	<meta property="og:url" content="<$mt:BlogURL$>" />
+	<mt:if tag="OGSiteName"><meta property="og:title" content="<$mt:OGSiteName$>" /></mt:If>
+	<mt:if tag="OGType"><meta property="og:type" content="<$mt:OGType$>"/></mt:If>
 	<mt:if tag="OGLocale"><meta property="og:locale" content="<$mt:OGLocale$>" /></mt:if>
+	<mt:if tag="OGDescription"><meta property="og:description" content="<$mt:OGDescription$>" /></mt:If>
+	<mt:if tag="OGImage"><meta property="og:image" content="<mt:OGImageAsset><mt:AssetThumbnailURL width="130" height="110"></mt:OGImageAsset>" /></mt:If>
+	<mt:if tag="OGSiteName"><meta property="application-name" content="<$mt:OGSiteName$>"/></mt:if>
 	<meta name="robots" http-equiv="robots" content="index, follow" />
 	<meta name="language" http-equiv="language" content="<$mt:BlogLanguage$>" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -26,10 +35,7 @@
 	<mt:IfiOSWebApp><meta name="apple-mobile-web-app-capable" content="yes" /></mt:IfiOSWebApp>
 	<mt:IfiOSWebApp><meta name="apple-mobile-web-app-status-bar-style" content="<$mt:AppleStatusBar$>" /></mt:IfiOSWebApp>
 	<link rel="alternate" type="application/atom+xml" title="<$mt:OGSiteName$> - Recent Articles" href="<$mt:Link template="feed_recent"$>" />
-	<mt:if tag="OGSiteName"><meta property="og:title" content="<$mt:OGSiteName$>" /></mt:If>
-	<meta property="og:type" content="website"/>
-	<mt:if tag="OGDescription"><meta property="og:description" content="<$mt:OGDescription$>" /></mt:If>
-	<mt:if tag="OGImage"><meta property="og:image" content="<mt:OGImageAsset><mt:AssetThumbnailURL width="130" height="110"></mt:OGImageAsset>" /></mt:If>
+	<mt:if tag="OGSiteName"><meta name="title" content="<$mt:OGSiteName$>"></mt:If>
 	<mt:if tag="MetaDescription"><meta name="description" content="<$mt:MetaDescription$>" /></mt:If>
 	<mt:if tag="MetaKeywords"><meta name="keywords" content="<$mt:MetaKeywords$>" /></mt:If>
 	<mt:if tag="MetaAuthor"><meta name="author" http-equiv="author" content="<$mt:MetaAuthor$>" /></mt:If>
@@ -37,13 +43,18 @@
 	<mt:if tag="OGImage"><link rel="image_src" href="<mt:OGImageAsset><mt:AssetThumbnailURL width="130" height="110"></mt:OGImageAsset>" /></mt:If>
 	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="<$mt:Link template="rsd"$>" />
 	<link rel="canonical" href="<$mt:BlogURL$>"/>
+	
 	<link rel="stylesheet" href="<$mt:Link template="base_styles"$>?v=<$mt:SiteRevision$>" type="text/css" />
 	<link rel="stylesheet" href="<mt:PluginStaticWebPath component="MyTheme">css/grid.css?v=<$mt:SiteRevision$>" type="text/css" />
 	<link rel="stylesheet" href="<$mt:PluginStaticWebPath component="MyTheme"$>css/theme.css?v=<$mt:SiteRevision$>" type="text/css" />
 	<link rel="stylesheet" href="<mt:PluginStaticWebPath component="MyTheme">css/colorbox.css?v=<$mt:SiteRevision$>" type="text/css" />
+		
 	<script type="text/javascript" src="http://platform.twitter.com/anywhere.js?id=<$mt:TwitterAnywhereID$>&amp;v=1"></script>
 	<script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
 	<script type="text/javascript" src="<mt:PluginStaticWebPath component="MyTheme">js/libs/modernizr-2.0.6.min.js"></script>
+    <mt:if tag="TypeKitID"><script type="text/javascript" src="http://use.typekit.com/<$mt:TypeKitID$>.js"></script> 
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script></mt:If>
+
 
     <!--[if lt IE 7 ]>
     <style type="text/css">
@@ -52,17 +63,35 @@
     <script type="text/javascript" src="<$mt:PluginStaticWebPath component="TMR"$>css/iepngfix_tilebg.js"></script>
     <![endif]-->
 
+	<mt:If tag="GoogleAnalyticsPlacement" eq="Top">
+	<script>
+		var _gaq=[['_setAccount','<$mt:AnalyticsJavascriptGoogle$>'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
+	</mt:If>
 </head>
 <body>
+<mt:if tag="OGAppID">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=<$mt:OGAppID$>";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</mt:if>
   <div id="container">
     <header>
 		<div id="header" class="container_16 clearfix">Header</div>
     </header>
-    
+
     <div id="main">
 		<div id="content" class="container_16 clearfix">Content</div>
     </div>
-    
+
     <footer>
 		<div id="footer" class="container_16 clearfix">Footer</div>
     </footer>
@@ -83,18 +112,25 @@
 	<script type="text/javascript" src="<$mt:PluginStaticWebPath component="MyTheme"$>js/libs/theme.js?v=<$mt:SiteRevision$>"></script>
 	<script type="text/javascript" src="<$mt:Link template="javascript"$>"></script>
 	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-  
+
 	<!--[if lt IE 7 ]>
     <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
     <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 	<![endif]-->
 
+	<mt:If tag="GoogleAnalyticsPlacement" eq="Bottom">
 	<script>
-		var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+		var _gaq=[['_setAccount','<$mt:AnalyticsJavascriptGoogle$>'],['_trackPageview']];
 		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 		s.parentNode.insertBefore(g,s)}(document,'script'));
 	</script>
-  
+	</mt:If>
+<mt:If tag="AnalyticsJavascriptHitslink">
+<$mt:AnalyticsJavascriptHitslink$>
+</mt:If>
+<mt:If tag="AnalyticsJavascriptQuantcast">
+<$mt:AnalyticsJavascriptQuantcast$>
+</mt:If>
 </body>
 </html>

@@ -93,16 +93,16 @@ template_sets:
                     hint: 'This section includes the javascript and verification code to track analytics on ths site. It also includes META data for SEO.'
                     order: 1
                 fs_group2:
-                    label: 'Group 2'
-                    hint: 'Hint goes here.'
+                    label: 'Open Graph'
+                    hint: 'Below are settings for Facebook Applications and Open Graph tags.'
                     order: 2
                 fs_group3:
-                    label: 'Group 3'
-                    hint: 'Hint goes here.'
+                    label: 'Web Fonts'
+                    hint: 'This section allows you to add TypeKit or Google Fonts to your site'
                     order: 3
                 fs_group4:
-                    label: 'Group 4'
-                    hint: 'Hint goes here.'
+                    label: 'Webapp Settings'
+                    hint: 'This section includes the images used for iPod Touch, iPhone and iPad, as well as Android. It is encouraged to use the "Precomposed" setting if you wish to be compatible with older Android devices. Precomposed means the iOS does not add gloss to your icons.'
                     order: 4
                 fs_group5:
                     label: 'Group 5'
@@ -147,23 +147,30 @@ template_sets:
             google_var:
                 type: text
                 label: 'Google Verification'
-                hint: 'Enter in the verification code given to you by Google Web Master Tools. For example, for the tag &lt;META name="google-site-verification" content="YOUR_CODE"&gt; you would enter in "YOUR_CODE" here.'
+                hint: 'Enter in the verification code given to you by Google Web Master Tools. For example, for the tag &lt;META name="google-site-verification" content="YOUR_CODE"&gt; you would enter "YOUR_CODE" here.'
                 tag: 'GoogleWebVerify'
                 order: 2
                 fieldset: fs_group1
             yahoo_var:
                 type: text
                 label: 'Yahoo Verification'
-                hint: 'Enter in the verification code given to you by Google Web Master Tools. For example, for the tag &lt;META name="y_key    " content="YOUR_CODE"&gt; you would enter in "YOUR_CODE" here.'
+                hint: 'Enter in the verification code given to you by Google Web Master Tools. For example, for the tag &lt;META name="y_key    " content="YOUR_CODE"&gt; you would enter "YOUR_CODE" here.'
                 tag: 'YahooWebVerify'
                 order: 3
                 fieldset: fs_group1
             bing_var:
                 type: text
                 label: 'Bing Verification'
-                hint: 'Enter in the verification code given to you by Google Web Master Tools. For example, for the tag &lt;META name="msvalidate.01" content="YOUR_CODE"&gt; you would enter in "YOUR_CODE" here.'
+                hint: 'Enter in the verification code given to you by Google Web Master Tools. For example, for the tag &lt;META name="msvalidate.01" content="YOUR_CODE"&gt; you would enter "YOUR_CODE" here.'
                 tag: 'BingWebVerify'
                 order: 4
+                fieldset: fs_group1
+            bitly_var:
+                type: text
+                label: 'Bit.ly Verification'
+                hint: 'Enter in the verification code given to you by Bit.ly. For example, for the tag &lt;meta name="bitly-verification" content="YOUR_CODE"&gt; you would enter "YOUR_CODE" here.'
+                tag: 'BitlyVerify'
+                order: 4.5
                 fieldset: fs_group1
             meta_data_spacer:
                 type: separator
@@ -215,6 +222,247 @@ template_sets:
                 tag: 'MetaEmail'
                 order: 11
                 fieldset: fs_group1
+            og_site_name:
+                type: text
+                label: 'Open Graph Site Name'
+                hint: 'This is the name of the Site as it will appear in Facebook.'
+                tag: 'OGSiteName'
+                order: 2
+                fieldset: fs_group2
+            og_app_id:
+                type: text
+                label: 'Facebook Application ID'
+                hint: 'This is the Facebook Platform application ID used for this site.'
+                tag: 'OGAppID'
+                order: 3
+                fieldset: fs_group2
+            og_page_id:
+                type: text
+                label: 'Facebook Page ID'
+                hint: 'This is the Facebook Platform page ID used for this site. This is required to use Facebook Insights.'
+                tag: 'OGPageID'
+                order: 4
+                fieldset: fs_group2
+            og_admins:
+                type: text
+                label: 'Facebook Admin(s)'
+                hint: 'A comma-separated list of Facebook user IDs that administers this page.'
+                tag: 'OGAdminID'
+                order: 5
+                fieldset: fs_group2
+            og_description:
+                type: textarea
+                rows: 2
+                label: 'Open Graph Description'
+                hint: 'The default text used for Facebook Share/Like for this site (home page only).'
+                tag: 'OGDescription'
+                order: 6
+                fieldset: fs_group2
+            og_locale:
+                type: text
+                label: 'Locale'
+                hint: 'Site locations such as en_US, en_GB, etc.'
+                tag: 'OGLocale'
+                default: 'en_US'
+                order: 7
+                fieldset: fs_group2
+            og_type:
+                type: select
+                values: activity,sport,bar,company,cafe,hotel,restaurant,cause,sports_league,sports_team,band,government,non_profit,school,university,actor,athlete,author,director,musician,politician,public_figure,city,country,landmark,state_province,album,book,drink,food,game,product,song,movie,tv_show,blog,website,article
+                label: 'Type (Home Page)'
+                hint: 'This is for the Home Page only, usually website or blog.'
+                tag: 'OGType'
+                default: 'website'
+                order: 8
+                fieldset: fs_group2
+            og_site_image:
+                type: file
+                destination: images/%{10}e
+                label: 'Open Graph Site Image'
+                hint: 'This is the thumbnail image used for Share/Like for everything but articles. Image will be resized to no more than 130x110px.'
+                tag: 'OGImage'
+                scope: blog
+                order: 10
+                fieldset: fs_group2
+            og_type2:
+                type: select
+                values: activity,sport,bar,company,cafe,hotel,restaurant,cause,sports_league,sports_team,band,government,non_profit,school,university,actor,athlete,author,director,musician,politician,public_figure,city,country,landmark,state_province,album,book,drink,food,game,product,song,movie,tv_show,blog,website,article
+                label: 'Type (Entries)'
+                hint: 'This is for the Entries only, and is usually article.'
+                tag: 'OGType2'
+                default: 'article'
+                order: 11
+                fieldset: fs_group2
+            og_type3:
+                type: select
+                values: activity,sport,bar,company,cafe,hotel,restaurant,cause,sports_league,sports_team,band,government,non_profit,school,university,actor,athlete,author,director,musician,politician,public_figure,city,country,landmark,state_province,album,book,drink,food,game,product,song,movie,tv_show,blog,website,article
+                label: 'Type (Pages)'
+                hint: 'This is for the Pages only, and is usually article.'
+                tag: 'OGType3'
+                default: 'article'
+                order: 11.5
+                fieldset: fs_group2
+            business_info_seperator:
+                type: separator
+                label: 'Business Settings'
+                hint: 'Below are settings are Open Graph tags specific to a physical business address. Use these if you set Type (Home Page) to company.'
+                order: 12
+                fieldset: fs_group2
+            og_latitude:
+                type: text
+                label: 'Latitude'
+                hint: 'This is the latitude for your business, such as 37.416343.'
+                tag: 'OGLat'
+                order: 13
+                fieldset: fs_group2
+            og_longitude:
+                type: text
+                label: 'Longitude'
+                hint: 'This is the longitude for your business, such as -122.153013.'
+                tag: 'OGLong'
+                order: 14
+                fieldset: fs_group2
+            og_street_address:
+                type: text
+                label: 'Street Address'
+                tag: 'OGStreet'
+                order: 16
+                fieldset: fs_group2
+            og_locality:
+                type: text
+                label: 'City'
+                tag: 'OGCity'
+                order: 16
+                fieldset: fs_group2
+            og_region:
+                type: text
+                label: 'State/Region'
+                hint: 'Abbreviated state, such as CA.'
+                tag: 'OGState'
+                order: 17
+                fieldset: fs_group2
+            og_postal_code:
+                type: text
+                label: 'Postal Code'
+                tag: 'OGZip'
+                order: 18
+                fieldset: fs_group2
+            og_country_name:
+                type: text
+                label: 'Country'
+                tag: 'OGCountry'
+                order: 19
+                fieldset: fs_group2
+            og_email:
+                type: text
+                label: 'Email'
+                hint: 'This is the company email, such as me@example.com.'
+                tag: 'OGEmail'
+                order: 20
+                fieldset: fs_group2
+            og_phone_number:
+                type: text
+                label: 'Phone Number'
+                tag: 'OGPhone'
+                order: 21
+                fieldset: fs_group2   
+            og_fax_number:
+                type: text
+                label: 'Fax Number'
+                tag: 'OGFax'
+                order: 22
+                fieldset: fs_group2   
+            typekit_id:
+                type: text
+                label: 'TypeKit ID'
+                hint: 'Enter the TypeKit ID for this web site. For example, for the tag &lt;script type="text/javascript" src="http://use.typekit.com/YOUR_CODE.js"&gt; you would enter "YOUR_CODE" here.'
+                tag: 'TypeKitID'
+                order: 1
+                fieldset: fs_group3     
+            google_web_font:
+                type: textarea
+                rows: 7
+                label: 'Google Web Fonts'
+                hint: 'Enter the line(s) of CSS here to load Google Web Fonts into your web site.'
+                tag: 'GoogleWebFonts'
+                order: 2
+                fieldset: fs_group3
+            apple_touch_icon:
+                type: file
+                destination: images/%{10}e
+                label: 'Apple Touch Icon'
+                hint: 'This is the Home Screen icon used on older generation iPod Touch and iPhone models. <span>Image dimensions: 57x57px</span>.'
+                tag: 'AppleTouchIcon'
+                scope: blog
+                order: 1
+                fieldset: fs_group4
+            apple_touch_icon72:
+                type: file
+                destination: images/%{10}e
+                label: 'Apple Touch Icon (72)'
+                hint: 'This is the Home Screen icon used on the first generation iPad. <span>Image dimensions: 72x72px</span>.'
+                tag: 'AppleTouchIcon72'
+                scope: blog
+                order: 2
+                fieldset: fs_group4
+            apple_touch_icon114:
+                type: file
+                destination: images/%{10}e
+                label: 'Apple Touch Icon (114)'
+                hint: 'This is the Home Screen icon used on the fourth generation iPod Touch and iPhone. <span>Image dimensions: 114x114px</span>.'
+                tag: 'AppleTouchIcon114'
+                scope: blog
+                order: 3
+                fieldset: fs_group4
+            apple_precomposed:
+                type: checkbox
+                label: 'Precomposed?'
+                hint: 'Precomposed means that the iOS will not render the gloss on your Apple Touch Icon. For legacy Android support, check this.'
+                tag: 'AppleTouchPrecomposed?'
+                fieldset: fs_group4
+                order: 4
+            iphone_startup_image:
+                type: file
+                destination: images/%{10}e
+                label: 'iPhone/iPod Splash'
+                hint: 'This is the splash screen that loads when the iOS bookmark has been saved to the Home Screen. <span>Image dimensions: 320x460px <u>must be exact</u></span>.'
+                tag: 'AppleStartupImage'
+                scope: blog
+                order: 6
+                fieldset: fs_group4
+            iphone4_startup_image:
+                type: file
+                destination: images/%{10}e
+                label: '4th Gen Splash'
+                hint: 'This is the splash screen that loads when the iOS bookmark has been saved to the Home Screen. <span>Image dimensions: 640x940px <u>must be exact</u></span>.'
+                tag: 'AppleStartupImageHigh'
+                scope: blog
+                order: 6.5
+                fieldset: fs_group4
+            iphone_startup_ipad:
+                type: file
+                destination: images/%{10}e
+                label: 'iPad Splash'
+                hint: 'This is the splash screen that loads when the iPad bookmark has been saved to the Home Screen. <span>Image dimensions: 1004x768px <u>must be exact</u></span>.'
+                tag: 'AppleStartupiPad'
+                scope: blog
+                order: 7
+                fieldset: fs_group4
+            iphone_web_app:
+                type: checkbox
+                label: 'iOS Web App?'
+                hint: 'Checking this box will create a chromeless web app when saved to the Home Screen on an iOS device.'
+                tag: 'IfiOSWebApp?'
+                order: 8
+                fieldset: fs_group4
+            iphone_status_bar:
+                type: select
+                values: "default,black,black-translucent"
+                label: 'Status Bar Color'
+                hint: 'If set to default or black, the web content is displayed below the status bar. If set to black-translucent, the web content is displayed on the entire screen, partially obscured by the status bar.'
+                tag: 'AppleStatusBar'
+                order: 9
+                fieldset: fs_group4
 skip_static:
     - index.html
     - readme.txt

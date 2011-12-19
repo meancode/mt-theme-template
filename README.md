@@ -60,7 +60,6 @@ This section will explain what to modify before you get started building out you
 ## Changes/Additions from the HTML5 Boilerplate
 
 * Added 3 XML Namespace links to the HTML tag; two for Open Graph and one for Facebook Insights.
-* Added XFN Profile to the HEAD tag.
 * Set `meta charset` to the Movable Type/Melody charset `<$mt:PublishCharset$>`.
 * Created a field in Theme Options for Homepage Title. You should use other template tags for other Index and Archive templates. If no `<$mt:HomeTitle$>` is given, `<$mt:BlogName$>` is used.
 * Added Open Graph tags, modify these under Theme Options, these include `og:site_name`, `fb:app_id`, `fb:page_id`, `fb:admins`.

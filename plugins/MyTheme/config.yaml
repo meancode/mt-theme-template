@@ -1,13 +1,13 @@
 id: MyTheme
 key: MyTheme
 name: My Theme
-version: 0.4
+version: 0.5
 author_name: Your Name
 author_link: http://example.com/
 plugin_link: https://example.com/mytheme
 description: This is a skeloton theme for Movable Type 4 and Melody. Be sure to change all these settings.
 
-static_version: 1
+static_version: 2
 blog_preferences:
     my_config:
         label: "MyTheme Site Config"
@@ -78,6 +78,17 @@ template_sets:
             tag: MyThemePageFile
         templates:
           index:
+            main_index:
+              filename: index/index.mtml
+              label: 'Main Index'
+              outfile: index.php
+              rebuild_me: 1
+              build_type: 4
+            htaccess:
+              filename: index/htaccess.mtml
+              label: '.htaccess'
+              outfile: htaccess.txt
+              rebuild_me: 0
           individual:
           page:
           entry:

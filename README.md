@@ -1,4 +1,4 @@
-# MT Theme Template 0.4
+# MT Theme Template 0.5
 
 The purpose here is twofold: 
 
@@ -15,7 +15,7 @@ The purpose here is twofold:
 
 ## Melody Prerequisites
 
-* Melody 1 higher [Download](https://github.com/openmelody/melody)
+* Melody 1.0 or higher [Download](https://github.com/openmelody/melody)
 * ConfigAssistant and Theme Manager are both bundled with Melody
 
 ## Theme Foundation
@@ -50,12 +50,13 @@ Not interested in using the 960 Grid System? Just delete all references from the
 
 # Theme Template Usage
 
-This section will explain what to modify before you get started building out your theme using this skeleton.
+This section will explain what to modify before you get started building out your theme using this skeleton. Please keep in mind that this is not a completed theme you can install and use, but a boilerplate for creating your own theme.
 
--   Replace &ldquo;Your Name&rdquo; in all files with _Your Name_ (use find/replace).
--   Replace &ldquo;MyTheme&rdquo; in all files with the name of your Theme (use find/replace).
--   Change name, author\_name, author\_link and description in `config.yaml`
--   Modify `default_prefs.yaml` using [this Melody documentation](https://github.com/openmelody/melody/wiki/designguide-prefbundles) as a guide.
+* Replace &ldquo;Your Name&rdquo; in all files with _Your Name_ (use find/replace).
+* Replace &ldquo;MyTheme&rdquo; in all files with the name of your Theme (use find/replace).
+* Change name, author\_name, author\_link and description in `config.yaml`
+* Modify `default_prefs.yaml` using [this Melody documentation](https://github.com/openmelody/melody/wiki/designguide-prefbundles) as a guide.
+* The .htaccess template is **NOT** set to output to .htaccess on your web server by design -- to make sure it does not overwrite any pre-existing file or cause Apache not to function correctly. You will need to modify the `outfile` on line 90 of the `config.yaml` before deployment. **It is also highly advised to take a minimalist approach and only use what you need in your .htaccess file**. The one provided is from the HTML5 Boilerplate with only one modification, the path of the 404 ErrorDocument.
 
 ## Changes/Additions from the HTML5 Boilerplate
 

@@ -69,6 +69,11 @@ This section will explain what to modify before you get started building out you
 * Added [Colorbox](https://github.com/jackmoore/colorbox) to the template.
 * Added [Twitter @Anywhere](http://dev.twitter.com/anywhere), you will need to setup an application for it.
 
+# Future Plans
+
+* Add [jQuery Mobile](http://jquerymobile.com/) boilerplate templates for iPhone/iPad/Android site.
+* Add [HTML Email Boilerplate](http://htmlemailboilerplate.com/) with most recent content for email editions.
+* Port this theme to Movable Type 5.
 
 # About Meancode Media, LLC
 
